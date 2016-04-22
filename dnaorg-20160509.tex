@@ -69,15 +69,15 @@ National Institutes of Health\\
        &                    &              &                &          &        &       &          \\ 
      2 & Dengue             &         3875 & Flaviviridae   & (+)ssRNA & humans &     1 &      14  \\
        &                    &              &                &          &        &       &          \\ 
-     3 & West Nile          &        2218  & Flaviviridae   & (+)ssRNA & humans &     3 &      16  \\
+     3 & Rotavirus          &      22536*  & Reoviridae     & dsRNA    & humans &    12 &       -  \\
        &                    &              &                &          &        &       &          \\ 
-     4 & Rotavirus          &      22536*  & Reoviridae     & dsRNA    & humans &    12 &       -  \\
+     4 & HIV-1              &        2132  & Retroviridae   & ssRNA-RT & humans &    10 &      14  \\
        &                    &              &                &          &        &       &          \\ 
-     5 & HIV-1              &        2132  & Retroviridae   & ssRNA-RT & humans &    10 &      14  \\
+     5 & Porcine circovirus &        1559  & Circoviridae   & ssDNA    & pigs   &     3 &       -  \\
        &                    &              &                &          &        &       &          \\ 
-     6 & Porcine circovirus &        1559  & Circoviridae   & ssDNA    & pigs   &     3 &       -  \\
+     6 & Hepatitis C        &        1457  & Flaviviridae   & (+)ssRNA & humans &     2 &      10  \\
        &                    &              &                &          &        &       &          \\ 
-     7 & Hepatitis C        &        1457  & Flaviviridae   & (+)ssRNA & humans &     2 &      10  \\
+     7 & West Nile          &        1109  & Flaviviridae   & (+)ssRNA & humans &     3 &      16  \\
        &                    &              &                &          &        &       &          \\ 
      8 & Ebola              &        1105  & Flaviviridae   & (+)ssRNA & humans &     9 &       -  \\
        &                    &              &                &          &        &       &          \\ 
@@ -162,10 +162,88 @@ National Institutes of Health\\
 % Pilot species:
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
+\textbf{Four pilot species were chosen from the 15 most common}
+
+\tiny
+\begin{tabular}{r|l|r|l|l|l|r|r}
+       &                    &              &                &          &        &       & \#mature \\ 
+  rank & species            &       \#seqs & family         & type     & host   & \#cds & peptides \\ \hline
+       &                    &              &                &          &        &       &          \\ 
+\textcolor{red}{1} & \textcolor{red}{Hepatitis B}        &         \textcolor{red}{7061} & \textcolor{red}{Hepadnaviridae} & \textcolor{red}{dsDNA-RT} & \textcolor{red}{humans} &     \textcolor{red}{7} &       \textcolor{red}{-}  \\
+       &                    &              &                &          &        &       &          \\ 
+\textcolor{red}{2} & \textcolor{red}{Dengue}             &         \textcolor{red}{3875} & \textcolor{red}{Flaviviridae}   & \textcolor{red}{(+)ssRNA} & \textcolor{red}{humans} &     \textcolor{red}{1} &      \textcolor{red}{14}  \\
+       &                    &              &                &          &        &       &          \\ 
+     3 & Rotavirus          &      22536*  & Reoviridae     & dsRNA    & humans &    12 &       -  \\
+       &                    &              &                &          &        &       &          \\ 
+     4 & HIV-1              &        2132  & Retroviridae   & ssRNA-RT & humans &    10 &      14  \\
+       &                    &              &                &          &        &       &          \\ 
+     5 & Porcine circovirus &        1559  & Circoviridae   & ssDNA    & pigs   &     3 &       -  \\
+       &                    &              &                &          &        &       &          \\ 
+     \textcolor{red}{6} & \textcolor{red}{West Nile}          &        \textcolor{red}{1109} & \textcolor{red}{Flaviviridae}   & \textcolor{red}{(+)ssRNA} & \textcolor{red}{humans} &     \textcolor{red}{3} &      \textcolor{red}{16}  \\
+       &                    &              &                &          &        &       &          \\ 
+     7 & Hepatitis C        &        1457  & Flaviviridae   & (+)ssRNA & humans &     2 &      10  \\
+       &                    &              &                &          &        &       &          \\ 
+     8 & Ebola              &        1105  & Flaviviridae   & (+)ssRNA & humans &     9 &       -  \\
+       &                    &              &                &          &        &       &          \\ 
+     9 & Enterovirus A      &         932  & Picarnoviridae & (+)ssRNA & humans &     1 &      11  \\
+       &                    &              &                &          &        &       &          \\ 
+    10 & RSV                &         623  & Paramyxoviridae& (-)ssRNA & humans &    11 &       -  \\
+       &                    &              &                &          &        &       &          \\ 
+    11 & Enterovirus C (Polio) &      618  & Picarnoviridae & (+)ssRNA & humans &     1 &      13  \\
+       &                    &              &                &          &        &       &          \\ 
+    12 & JC polyomavirus    &          598 & Polyomaviridae & dsDNA    & humans &     6 &       -  \\
+       &                    &              &                &          &        &       &          \\ 
+    13 & PRRSV              &          520 & Arteriviridae  & (+)ssRNA & pigs   &    11 &      13  \\ %# 15 mat_peptide segments, 13 mat_peptides 
+       &                    &              &                &          &        &       &          \\ 
+    \textcolor{red}{14} & \textcolor{red}{Maize streak virus} &          \textcolor{red}{508} & \textcolor{red}{Geminiviridae}  & \textcolor{red}{ssDNA}    & \textcolor{red}{plants} &     \textcolor{red}{4} &      \textcolor{red}{-}   \\
+       &                    &              &                &          &        &       &          \\ 
+    15 & Norwalk virus      &          491 &  Calciviridae  & (+)ssRNA & humans &     3 &       6  \\ 
+\end{tabular}
+
+\begin{center}
+\includegraphics[width=8in]{figs/flavi-wnv-eneida}
+\end{center}
+\vfill
+\end{slide}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+\begin{center}
+\textbf{Maize streak virus}
+
+\includegraphics[width=3in]{figs/msv-genome-small}
+
+\begin{itemize}
+\item 
+\end{center}
+\vfill
+\end{slide}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+\begin{center}
+\textbf{Dengue virus}
+
+\includegraphics[width=3in]{figs/dengue-eneida}
+
+\begin{itemize}
+\item 
+\end{center}
+\vfill
+\end{slide}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
 \textbf{West Nile virus}
 
 \begin{center}
 \includegraphics[width=8in]{figs/flavi-wnv-eneida}
+\end{center}
+\vfill
+\end{slide}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+\textbf{Hepatitis B virus}
+
+\begin{center}
+\includegraphics[width=8in]{figs/hbv-genome}
 \end{center}
 \vfill
 \end{slide}
