@@ -1,0 +1,1171 @@
+EPN, Wed Mar 30 10:43:40 2016
+
+<[(16_0330_dnaorg_talk)]> pwd
+/home/nawrocke/notebook/16_0330_dnaorg_talk
+
+Purpose: Prepare a talk on the dnaorg virus annotations. 
+
+=============================
+EPN, Wed Mar 30 10:43:56 2016
+
+In my meeting this mornign with Alejandro, we made some important
+decisions regarding my eventual talk on the viral genome annotation
+project. 
+
+The first task is to update Alejandro's weekly planning document for
+this week, which he sent me yesterday (03.29.16). 
+
+<[(16_0330_dnaorg_talk)]> cp planning_20160329.txt planning_20160330.txt 
+
+-------------------------
+I sent the draft in planning_20160330_origdraft.txt to Alejandro who
+made some important edits, the final version, which is the one
+Alejandro created is here:
+<[(16_0330_dnaorg_talk)]> ls -ltr planning_20160330.txt ls -ltr planning_20160330.txt 
+-rw-r--r-- 1 nawrocke oblast 3095 Mar 30 14:58 planning_20160330.txt
+
+===================================
+EPN, Mon Apr  4 06:28:57 2016
+
+Communicating with David Lipman, who asked Alejandro about the talk on
+April 3.
+
+The email from Alejandro to David, with me cc'ed, and with David's
+initial question about the talk appended:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Nawrocki, Eric 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+(NIH/NLM/happen before he does his internal
+presentation and the plans are written with time estimates.
+One of the points on which Eric and I agreed is that from now until
+the 
+presentation, he would communicate with you directly about planning
+and 
+scheduling, cc'ing me; for that reson only, I do not reveal the time 
+estimates in this reply.
+[So, Eric, this is your cue to communicate with David Lipman. It's
+probably not necessary to keep David Landsman cc'd, although I did
+so for this message.]
+
+The things Eric and I have worked on sice March 30th are 100%
+consistent
+with the plans we made that day, so the four day gap between when we
+planned (March 30) and when you asked (April 3) matters only in the
+sense that it is a small empirical test of whether we can stick to our
+
+plans.
+
+Answer to your implicit question:
+
+If you wish to meet with Eric and me together, then Wednesday mornings
+at 9AM my office would be best, since Eric and I have a scheduled
+meeting 
+already.
+
+If you wish to meet with me alone, then some possibiltiies this week
+are
+Monday April 4 any time after pathogens meeting is over
+Tuesday April 5 ending by 11AM (CBB seminar time)
+Thursday April 7 morning
+
+Your phrase "review in person" suggests a level of detail that will be
+
+achieved better by meeting in my office this time, so I can show you 
+files. However, for the virus annotation project, I claim that what
+you may want
+to know, besides the time estimate to presentation, is adequately
+written 
+on JIRA tickets VIV-254 and VIV-272. I doubt that I could explain in 
+person more clearly than the recent posts from Eric, Rodney, Eneida,
+and me on those 
+two tickets.
+
+Regards,
+Alejandro
+
+On Sun, 3 Apr 2016, Lipman, David (NIH/NLM/NCBI) [E] wrote:
+
+> Thanks Alejandro -
+> as always, very informative and productive.
+> Perhaps we can find a time to sit down to review in person
+> so I'm sure I fully understand.  But it seems you and Eric have made
+> 
+> significant progress - this is really impressive and this work will
+> be 
+> important.  Do you have an estimate of when it make sense for Eric
+> to do 
+> a presentation?
+>
+> David
+
+-------------------------
+=====================================
+EPN, Fri Apr  8 15:53:52 2016
+
+I just met with Alejandro and he made some suggestions about the talk
+that I want to write down:
+
+What Alejandro thinks I should stree:
+1. NEW things that our project offers:
+   - error ontogeny (nobody has anything like this, and he can think
+     of about 6 projects that could use this.)
+   - RNA annotations (same thing, multiple projects could benefit from
+     this)
+   - mature peptide annotation
+2. Improving existing stuff:
+   - better annotations
+   - faster (ViV only had a few species, we can now 'crank out about 1
+     per day)
+
+-------------
+Also, before I give a code presentation advertising my code, I want to
+make sure BioEasel is behaving nicely in memory. I found this
+http://search.cpan.org/~doneill/Memory-Usage-0.201/lib/Memory/Usage.pm
+which may be helpful.
+
+===============================
+EPN, Thu Apr 14 15:01:04 2016
+
+Some suggestions from Alejandro about the talk:
+
+First an email about Richa Agarwala attending my talk:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dear Eric,
+
+  This e-mail should have been cc'd to you.
+Richa Agarwala and Boris Kiryutin (under her supervision) plan to
+attend your seminar. They are interested in (at least):
+
+  a) error codes
+
+  b) Infernal vs. HMMER comparison
+
+This is a signal that the two lettered points should be covered
+in your presentation.
+
+Since David is reserving one hour, you should plan for a 30-40
+minute presentation with plenty of time for discussion/questions.
+
+Regards,
+Alejandro
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+And notes from our weekly meeting yesterday:
+
+For Future work, break this down into two categories: 
+- Long term:
+ - find nearest RefSeq (using HMMs)
+ - origin problem (using HMMs)
+ - protein-based searche
+ - multiple alignment based searches
+
+- Short term: 
+  (Alejandro recommends I bring copies of our TODO w/Rodney list to
+  hand out)
+  - say something like, I have a 20 point todo list, agreed upon on
+    4/12/16
+  - here's what we've done since then...
+  - here's what is currently being done/in flux
+  - here's what is left to do
+
+---------------------------
+
+Okay, actually starting the slides.
+
+I want to use Latex and put it under Git control.
+
+I'll start with the talk_rna_club_20151103 directory I already have on
+GitHub.
+
+<[(16_0330_dnaorg_talk)]> git clone https://github.com/nawrockie/talk_rna_club_20151103.git
+
+And cloning the new repo, which I just made on GitHub:
+<[(16_0330_dnaorg_talk)]> git clone https://github.com/nawrockie/talk_dnaorg_20160509.git
+Cloning into 'talk_dnaorg_20160509'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+<[(16_0330_dnaorg_talk)]> cp talk_rna_club_20151103/rnaclub-20151103.tex ./talk_dnaorg_20160509/
+<[(16_0330_dnaorg_talk)]> cd talk_dnaorg_20160509/
+
+<[(talk_dnaorg_20160509)]> pwd
+/home/nawrocke/notebook/16_0330_dnaorg_talk/talk_dnaorg_20160509
+<[(talk_dnaorg_20160509)]> git add dnaorg-20160509.tex
+<[(talk_dnaorg_20160509)]> git add figs/
+<[(talk_dnaorg_20160509)]> git add figs/ncbi-logo.png 
+<[(talk_dnaorg_20160509)]> git commit -m "Initial commit."
+<[(talk_dnaorg_20160509)]> git push --set-upstream origin master
+Username for 'https://github.com': nawrockie
+Password for 'https://nawrockie@github.com': 
+
+Counting objects: 5, done.
+Delta compression using up to 24 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 10.87 KiB | 0 bytes/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/nawrockie/talk_dnaorg_20160509.git
+ * [new branch]      master -> master
+Branch master set up to track remote branch master from origin.
+  
+-------------
+Now making an outline:
+
+- introduction
+  - top ~30 viruses, number of genomes (chart or table?, probably table)
+    with stats on average number of annotated genes and number of
+    reference genes.
+  - Virus variation database
+    - users want to be able to select data based on criteria 
+      e.g. don't want any genes that are truncated, or only want
+           genes that are truncated, etc.
+
+- annotation pipeline and code (?) 
+  - fetch genome and build homology models (slow, but only needs to be
+    done once per RefSeq, only needs to be repeated if RefSeq is
+    updated)
+    code: dnaorg_build.pl
+  - for each accession in a list of accessions: (currently these are
+    full length or nearly full length), annotate 'features' in this
+    accession 
+  - types of features: 
+    - CDS (non-mature peptide)
+    - mature peptide
+    - CDS (mature peptide)
+    - other (origin) ???
+  - method for annotation: Infernal covariance model 
+    - not designed for sequence-only searches, but works fine
+    - may want to try HMMER 1.X
+    - definitely switch to HMMER4 when it becomes available.
+    - key feature: prefers global alignment
+  - correct predictions based on observed stops in the sequence
+  - report errors based on various aspects of the sequence
+
+- pilot species
+  - msv intro
+    - why we picked it
+  - dengue intro 
+    - why we picked it
+  - wnv intro
+    - why we picked it
+  - hbv intro 
+    - why we picked it
+  
+
+- error codes (OR MAYBE LATER?)
+  - list of error codes 
+  - examples of error codes
+
+- pilot results
+  - counts of errors, and matches with GenBank annotation
+  - comparison with existing ViV pipeline results
+
+- error codes (OR MAYBE LATER?)
+  - list of error codes 
+  - examples of error codes
+
+- future directions
+  - short term
+  - long term
+
+=============================
+EPN, Mon Apr 18 09:40:08 2016
+
+Working on slides:
+
+First slide: error codes.
+
+I'll start with just screen shots of descriptions of the error codes,
+if I don't end up liking how that presents, I'll make slides with text
+on them.
+
+The error codes are under git control:
+<[(talk_dnaorg_20160509)]> git clone https://github.com/nawrockie/dnaorg_error_code_documentation.git
+Cloning into 'dnaorg_error_code_documentation'...
+remote: Counting objects: 12, done.        
+remote: Total 12 (delta 0), reused 0 (delta 0), pack-reused 12        
+Unpacking objects: 100% (12/12), done.
+Checking connectivity... done.
+
+---------------
+Actually, I think I'll do two slides on how the code works first. 
+
+I pretty much finished these.
+==============================
+Making a table of viral genomes based on their counts in the VIV
+neighbors file.
+
+Downloading a current versino of that file:
+
+http://www.ncbi.nlm.nih.gov/genome/viruses/
+
+"Accession list of all viral genomes".
+
+That file is here:
+<[(virus-table)]> pwd
+/home/nawrocke/notebook/16_0330_dnaorg_talk/virus-table
+<[(virus-table)]> ls -ltr all-viral-genomes.041916.txt 
+-rw-r--r-- 1 nawrocke oblast 10564262 Apr 19 11:20 all-viral-genomes.041916.txt
+
+Okay, and the last time i did this was here:
+/home/nawrocke/notebook/15_0602_dnaorg_virus_reports
+
+which as since been moved to here:
+/panfs/pan1/dnaorg/notebook/15_0602_dnaorg_virus_reports
+
+Getting that 00LOG.txt here: 
+<[(virus-table)]> pwd
+/home/nawrocke/notebook/16_0330_dnaorg_talk/virus-table
+
+<[(virus-table)]> cp /panfs/pan1/dnaorg/notebook/15_0602_dnaorg_virus_reports/00LOG.txt ./15_0602_dnaorg_virus_reports_00LOG.txt
+
+Relevant bits form that 00LOG.txt file:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+First thing to do is to select the top 10-20 virus species in terms of
+numbers of genomes.
+
+I can easily do this by just pulling out the size of each of the
+.ntlist files in 
+
+<[(all-viral-genomes-052915)]> pwd
+/home/nawrocke/notebook/15_0518_dnaorg_virus_compare_script/all-viral-genomes-052915
+
+<[(all-viral-genomes-052915)]> pwd
+/home/nawrocke/notebook/15_0518_dnaorg_virus_compare_script/all-viral-genomes-052915
+<[(all-viral-genomes-052915)]> ls *.ntlist > all.ntlist.list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Okay, so I need to get those ntlist files again, getting that
+00LOG.txt
+
+<[(virus-table)]> cp
+/panfs/pan1/infernal/notebook/15_0518_dnaorg_virus_compare_script/00LOG.txt
+./15_0518_dnaorg_virus_compare_script_00LOG.txt
+
+There was a script named make-ntlists.pl that I used there, getting
+that:
+<[(virus-table)]> cp /panfs/pan1/infernal/notebook/15_0518_dnaorg_virus_compare_script/viral-genomes-051915/make-ntlists.pl ./
+<[(virus-table)]> perl make-ntlists.pl all-viral-genomes.041916.txt 
+<[(virus-table)]> ls *ntlist | wc -l
+6812
+<[(virus-table)]> mv *ntlist ntlist-files/
+
+Now following from 15_0602_dnaorg_virus_reports_00LOG.txt 
+From the entry started on:
+EPN, Tue Jun  2 09:47:40 2015
+
+<[(virus-table)]> cp /panfs/pan1/dnaorg/notebook/15_0602_dnaorg_virus_reports/choosing-top-viruses/ntlist-list2genome-count.pl ./
+
+<[(virus-table)]> ls ntlist-files/*ntlist > all.ntlist.list
+<[(virus-table)]> perl ntlist-list2genome-count.pl all.ntlist.list > all.genome-count
+
+
+<[(virus-table)]> sort -rn all.genome-count | nl > sorted.all.genome.count
+
+<[(virus-table)]> head -n 30 sorted.all.genome.count | column -ts $'\t'
+     1  7061 NC_003977                                                    X59795    vertebrates,human                Hepadnaviridae,Orthohepadnavirus,Hepatitis B virus                             Hepatitis B virus                                    segment  
+     2  3875 NC_002640,NC_001475,NC_001474,NC_001477                      EU482708  vertebrates,invertebrates,human  Flaviviridae,Flavivirus,Dengue virus                                           Dengue virus 1                                       segment  
+     3  3530 NC_011503                                                    JF965002  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Human rotavirus A                                    segment 9
+     4  2560 NC_011504                                                    JF490296  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Rotavirus A human/Victoria/CK00022/2005/G1P[8]       segment 10
+     5  2288 NC_011509                                                    FJ947246  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Rotavirus A human/Bethesda/DC130/1976/G3P[8]         segment 6
+     6  2191 NC_011502                                                    KC579687  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Rotavirus A                                          segment 8
+     7  2132 NC_001802                                                    K02013    vertebrates,human                Retroviridae,Lentivirus,Human immunodeficiency virus 1                         Human immunodeficiency virus 1                       segment  
+     8  2113 NC_011501                                                    KJ919030  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Human rotavirus A                                    segment 7
+     9  2112 NC_011505                                                    KC579679  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Rotavirus A                                          segment 11
+    10  1968 NC_011508                                                    JQ069730  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Human rotavirus A                                    segment 3
+    11  1756 NC_011510                                                    KT920962  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Rotavirus A                                          segment 4
+    12  1673 NC_011506                                                    KM820704  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Rotavirus A                                          segment 2
+    13  1661 NC_011507                                                    KJ752261  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Rotavirus A                                          segment 1
+    14  1559 NC_005148                                                    KM272212  vertebrates                      Circoviridae,Circovirus,Porcine circovirus 2                                   Porcine circovirus-2                                 segment  
+    15  1457 NC_004102,NC_009825,NC_009827,NC_009826,NC_009823,NC_009824  AF356827  vertebrates,human                Flaviviridae,Hepacivirus,Hepatitis C virus                                     Hepatitis C virus subtype 1b                         segment  
+    16  1109 NC_009942                                                    KJ501125  vertebrates,invertebrates,human  Flaviviridae,Flavivirus,West Nile virus                                        West Nile virus                                      segment  
+    17  1109 NC_001563                                                    KJ501125  vertebrates,invertebrates,human  Flaviviridae,Flavivirus,West Nile virus                                        West Nile virus                                      segment  
+    18  1105 NC_002549                                                    KR653291  vertebrates,human                Filoviridae,Ebolavirus,Zaire ebolavirus                                        Zaire ebolavirus                                     segment  
+    19  932 NC_001612                                                     DQ341365  vertebrates,human                Picornaviridae,Enterovirus,Enterovirus A                                       Human enterovirus 71                                 segment  
+    20  684 NC_011500                                                     JN258352  vertebrates,human                Reoviridae,Rotavirus,Rotavirus A                                               Rotavirus A                                          segment 5
+    21  623 NC_001781                                                     KJ939954  vertebrates,human                Paramyxoviridae,Pneumovirus,Human respiratory syncytial virus                  Human respiratory syncytial virus                    segment  
+    22  618 NC_002058                                                     V01150    vertebrates,human                Picornaviridae,Enterovirus,Enterovirus C                                       Human poliovirus 1 strain Sabin                      segment  
+    23  598 NC_001699                                                     JF424911  vertebrates,human                Polyomaviridae,Polyomavirus,JC polyomavirus                                    JC polyomavirus                                      segment  
+    24  520 NC_001961                                                     HQ843178  vertebrates                      Arteriviridae,Arterivirus,Porcine reproductive and respiratory syndrome virus  Porcine reproductive and respiratory syndrome virus  segment  
+    25  508 NC_001346                                                     KJ437659  plants                           Geminiviridae,Mastrevirus,Maize streak virus                                   Maize streak virus                                   segment  
+    26  491 NC_001959,NC_029645,NC_029647,NC_008311,NC_029646             KF429770  vertebrates,human                Caliciviridae,Norovirus,Norwalk virus                                          Norovirus Hu/GI.1/8McIII/1973/USA                    segment  
+    27  466 NC_004004                                                     AM503966  vertebrates                      Picornaviridae,Aphthovirus,Foot-and-mouth disease virus                        Foot-and-mouth disease virus                         segment  
+    28  415 NC_006010                                                     KP821475  vertebrates,invertebrates        Reoviridae,Orbivirus,Bluetongue virus                                          Bluetongue virus 16                                  segment 6
+    29  400 NC_004005                                                     KF229722  plants                           Geminiviridae,Begomovirus,Tomato yellow leaf curl virus                        Tomato yellow leaf curl virus-Oman                   segment  
+    30  396 NC_001542                                                     JQ685948  vertebrates,human                Rhabdoviridae,Lyssavirus,Rabies virus                                          Rabies virus                                         segment  
+
+And the ones that we selected were: MSV(25), HBV (1), Dengue, 
+And where's zika? 
+
+<[(virus-table)]> cat sorted.all.genome.count | grep -i zika
+   262	37 NC_012532	KF268948	vertebrates,invertebrates,human	Flaviviridae,Flavivirus,Zika virus	Zika virus	segment  
+
+It'd be nice to collapse this based on unique values in column 6, so
+that Rotavirus collapses to 1 row.
+
+I'll write a jiffy script to do that.
+
+<[(virus-table)]> perl collapse-sorted-virus-list.pl sorted.all.genome.count | head -n 20
+1	7061	1	Hepadnaviridae,Orthohepadnavirus,Hepatitis B virus	vertebrates,human
+2	3875	1	Flaviviridae,Flavivirus,Dengue virus	vertebrates,invertebrates,human
+3	22536	11	Reoviridae,Rotavirus,Rotavirus A	vertebrates,human
+4	2132	1	Retroviridae,Lentivirus,Human immunodeficiency virus 1	vertebrates,human
+5	1559	1	Circoviridae,Circovirus,Porcine circovirus 2	vertebrates
+6	1457	1	Flaviviridae,Hepacivirus,Hepatitis C virus	vertebrates,human
+7	2218	2	Flaviviridae,Flavivirus,West Nile virus	vertebrates,invertebrates,human
+8	1105	1	Filoviridae,Ebolavirus,Zaire ebolavirus	vertebrates,human
+9	932	1	Picornaviridae,Enterovirus,Enterovirus A	vertebrates,human
+10	623	1	Paramyxoviridae,Pneumovirus,Human respiratory syncytial virus	vertebrates,human
+11	618	1	Picornaviridae,Enterovirus,Enterovirus C	vertebrates,human
+12	598	1	Polyomaviridae,Polyomavirus,JC polyomavirus	vertebrates,human
+13	520	1	Arteriviridae,Arterivirus,Porcine reproductive and respiratory syndrome virus	vertebrates
+14	508	1	Geminiviridae,Mastrevirus,Maize streak virus	plants
+15	491	1	Caliciviridae,Norovirus,Norwalk virus	vertebrates,human
+16	466	1	Picornaviridae,Aphthovirus,Foot-and-mouth disease virus	vertebrates
+17	3299	10	Reoviridae,Orbivirus,Bluetongue virus	vertebrates,invertebrates
+18	400	1	Geminiviridae,Begomovirus,Tomato yellow leaf curl virus	plants
+19	396	1	Rhabdoviridae,Lyssavirus,Rabies virus	vertebrates,human
+20	361	1	Paramyxoviridae,Avulavirus,Newcastle disease virus	vertebrates,human
+
+So Norovirus is 15, so I can make a list of the top 15.
+
+And with the accessions. I think I have enough to make the table now:
+
+<[(virus-table)]> perl collapse-sorted-virus-list.pl sorted.all.genome.count | head -n 20
+1	7061	NC_003977	1	Hepadnaviridae,Orthohepadnavirus,Hepatitis B virus	vertebrates,human
+2	3875	NC_002640,NC_001475,NC_001474,NC_001477	1	Flaviviridae,Flavivirus,Dengue virus	vertebrates,invertebrates,human
+3	22536	NC_011503	11	Reoviridae,Rotavirus,Rotavirus A	vertebrates,human
+4	2132	NC_001802	1	Retroviridae,Lentivirus,Human immunodeficiency virus 1	vertebrates,human
+5	1559	NC_005148	1	Circoviridae,Circovirus,Porcine circovirus 2	vertebrates
+6	1457	NC_004102,NC_009825,NC_009827,NC_009826,NC_009823,NC_009824	1	Flaviviridae,Hepacivirus,Hepatitis C virus	vertebrates,human
+7	2218	NC_009942	2	Flaviviridae,Flavivirus,West Nile virus	vertebrates,invertebrates,human
+8	1105	NC_002549	1	Filoviridae,Ebolavirus,Zaire ebolavirus	vertebrates,human
+9	932	NC_001612	1	Picornaviridae,Enterovirus,Enterovirus A	vertebrates,human
+10	623	NC_001781	1	Paramyxoviridae,Pneumovirus,Human respiratory syncytial virus	vertebrates,human
+11	618	NC_002058	1	Picornaviridae,Enterovirus,Enterovirus C	vertebrates,human
+12	598	NC_001699	1	Polyomaviridae,Polyomavirus,JC polyomavirus	vertebrates,human
+13	520	NC_001961	1	Arteriviridae,Arterivirus,Porcine reproductive and respiratory syndrome virus	vertebrates
+14	508	NC_001346	1	Geminiviridae,Mastrevirus,Maize streak virus	plants
+15	491	NC_001959,NC_029645,NC_029647,NC_008311,NC_029646	1	Caliciviridae,Norovirus,Norwalk virus	vertebrates,human
+16	466	NC_004004	1	Picornaviridae,Aphthovirus,Foot-and-mouth disease virus	vertebrates
+17	3299	NC_006010	10	Reoviridae,Orbivirus,Bluetongue virus	vertebrates,invertebrates
+18	400	NC_004005	1	Geminiviridae,Begomovirus,Tomato yellow leaf curl virus	plants
+19	396	NC_001542	1	Rhabdoviridae,Lyssavirus,Rabies virus	vertebrates,human
+20	361	NC_002617	1	Paramyxoviridae,Avulavirus,Newcastle disease virus	vertebrates,human
+
+Columns I want: 
+rank, number of accessions, num segments, family, host, num cds, num
+exons, num mature peptides, circular?, type (ssRNA etc), avg num annotated
+
+-----------------------
+And writing a summary at David Lipman's request:
+
+I need to know the total number of viral genomes:
+
+<[(virus-table)]> cat sorted.all.genome.count | awk '{ print $2}' > ct.list
+<[(virus-table)]> perl sum.pl ct.list
+97316
+
+The version I'll send to Alejandro for David is here:
+<[(abstract-summary-20160419)]> pwd
+/home/nawrocke/notebook/16_0330_dnaorg_talk/abstract-summary-20160419
+<[(abstract-summary-20160419)]> cat summary-1.txt 
+GenBank contains more than 90,000 viral genome sequences (excluding
+influenza), but many of these lack annotation of important sequence
+features, such as CDS and mature peptides. In this talk, I will
+describe the pilot phase of a project I'm working on with Alejandro
+Schaffer to develop a computational pipeline for viral genome
+annotation, Given a viral genome sequence S for species X, along with
+a reference (e.g. RefSeq) annotation for a species X genome, the
+pipeline computes annotations for S using the homology search software
+package Infernal with reference nucleotide features as
+queries. Infernal predictions are corrected if necessary based on the
+presence of in-frame stop codons in coding regions, which Infernal
+does not detect. Currently, annotated features include CDS exons and
+mature peptide sequences.
+
+The pipeline also reports 'error codes' from a set of 17 possible
+codes, when an unexpected or notable characteristic is observed for a
+predicted feature. For example, invalid start codons, invalid stop
+codons, early stop codons, and the lack of overlap with the expected
+set of other features all trigger the report of a specific error
+code. The output of these codes includes sequence positions and other
+information meant to be helpful if a curator wanted to investigate.
+Though developed for viral sequences, the pipeline and error code
+scheme could be used for other types of sequences.
+
+I will report on the results of applying our pipeline to all GenBank
+genome sequences for several viral species, including Hepatitis B
+virus, Dengue virus, and West Nile virus. I will also provide examples
+of several of the error codes and discuss the future steps we hope to
+take.
+
+Further information:
+
+The code and a short tutorial (00NOTES.txt file) can be found here:
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg.pm
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg_build.pl
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg_annotate.pl
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/00NOTES.txt
+
+A document describing the error codes in more detail is here:
+/panfs/pan1/dnaorg/virseqannot/error_code_documentation/errorcodes.v5.documentation.txt
+
+------------------------------------------------
+Back to making the table:
+
+
+#                                                         special                               #mature
+# rank species             #accessions family          type      features  host     #cds #exons peptides   
+     1 Hepatitis B         7061        Hepadnaviridae  dsDNA-RT   circular humans      7      7        -
+     2 Dengue              3875        Flaviviridae    (+)ssRNA          - humans      1      1       14
+     3 Rotavirus           22536*      Reoviridae      dsRNA     segmented humans     12      ?        -  
+     4 HIV-1               2132        Retroviridae    ssRNA-RT          ? humans      ?      ?        ?
+     5 Porcine circovirus  1559        Circoviridae    ssDNA      circular pigs        ?      ?        ?
+     6 Hepatitis C         1457        Flaviviridae    (+)ssRNA            humans      ?      ?        ?
+     7 West Nile           2218*       Flaviviridae    (+)ssRNA            humans      ?      ?        ?
+     8 Ebola               1105        Flaviviridae    (+)ssRNA            humans      ?      ?        ?
+     9 Enterovirus A       932         Picarnoviridae  (+)ssRNA            humans      ?      ?        ?
+    10 RSV                 623         Paramyxoviridae (-)ssRNA            humans      ?      ?        ?
+    11 Enterovirus C       618         Picarnoviridae  (+)ssRNA            humans      ?      ?        ?
+    12 JC polyomavirus     598         Polyomaviridae  dsDNA               humans      ?      ?        ?
+    13 PRRSV               520         Arteriviridae   (+)ssRNA            pigs        ?      ?        ?     
+    14 Maize streak virus  508         Geminiviridae   ssDNA               plants      ?      ?        ?     
+    15 Norwalk virus       491         Calciviridae    (+)ssRNA            humans      ?      ?        ? 
+
+============================================
+EPN, Wed Apr 20 06:22:40 2016
+
+Alejandro made smoe changes to my proposed summary:
+
+His response to my email alerting him to my draft:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Dear Eric,
+
+     Your draft is good. Thanks for preparing your draft IMMEDIATELY! 
+I prepared a second draft in:
+
+/panfs/pan1.be-md.ncbi.nlm.nih.gov/dnaorg/2016.04/abstract_draft2.txt
+
+in which I added information for four distinct purposes:
+
+1) Added logistical information at the top, so that David Lipman
+    does not have to do so.
+
+2) Mentioned Rodney, Eneida, and Olga prominently to boost their
+    egos, to give them appropriate recognition,  and to give some other IEB
+    attendees confidence that we can work with
+    colleagues in IEB under the right circumstances.
+
+3) Explained some design decisions in more detail, to reduce the risk that
+    you will get sidetracked in the first 10 minutes by basic questions
+    about design decisions.
+
+4) Gave the invitees more technical information on which to base their
+    individual decisions on whether to attend or not to attend.
+
+I feel strongly about purposes 1) and 2).
+I feel weakly about purposes 3) and 4).
+Therefore, I will not object if you undo or shorten
+some of my insertions that are evidently not for purposes 1) and 2).
+
+Let's discuss the abstract during our meeting tomorrow and decide
+whether
+   -- it is close to ready
+or
+   -- we want to contemplate the content for some more time.
+
+Thanks and Regards,
+Alejandro
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Getting his draft:
+
+<[(abstract-summary-20160419)]> pwd
+/home/nawrocke/notebook/16_0330_dnaorg_talk/abstract-summary-20160419
+<[(abstract-summary-20160419)]> cp /panfs/pan1.be-md.ncbi.nlm.nih.gov/dnaorg/2016.04/abstract_draft2.txt ./
+
+Here it is:
+<[(abstract-summary-20160419)]> cat abstract_draft2.txt 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Title: Reference-guided annotation of virus genomes
+Speaker: Eric P. Nawrocki (CBB)
+Date: May 9th
+Time: 1:30-2:30PM
+Location: Bldg. 38A (Lister Hill), 8th floor conference room
+
+GenBank contains more than 90,000 viral genome sequences, excluding
+influenza and partial genomes. Many of these lack annotation of
+important sequence features, such as CDS and mature peptides. One of
+the objectives of the Virus Variation Resource directed by Rodney
+Brister (IEB) is to curate these genome sequences.
+
+I will describe the pilot phase of a project I'm working on with
+Alejandro Schaffer to develop a computational pipeline for viral
+genome annotation, Given a viral genome sequence S for species X,
+along with a reference (e.g. RefSeq) annotation for a species X
+genome, the pipeline computes annotations for S using the homology
+search software package Infernal (PMIDs 19307242, 24008419, 24639160)
+with reference nucleotide features as queries. Infernal predictions
+are corrected if necessary based on the presence of in-frame stop
+codons in coding regions, which Infernal does not detect. Currently,
+annotated features include CDS exons and mature peptide sequences.
+
+Working with Eneida Hatcher (IEB) and Olga Blinkova (IEB), I developed
+an ontogeny of errors and error descriptions to systematically identify
+sequences that either violate principles of molecular biology or differ
+so much from the reference that they should be considered suspect. 
+Using this ontogeny, the pipeline also reports 'error codes' from a set of 17 possible
+codes, when an unexpected or notable characteristic is observed for a
+predicted feature. For example, invalid start codons, invalid stop
+codons, early stop codons, and the lack of overlap with the expected
+set of other features all trigger the report of a specific error
+code. The output of these codes includes sequence positions and other
+information meant to be helpful if a curator wanted to investigate.
+Though developed for viral sequences, the pipeline and error code
+scheme could be used for other types of sequences.
+
+The pipeline is currently engineered to have two phases:
+
+1) A slower phase of building a model for each feature based on the
+reference sequence;
+
+and
+
+2) A faster phase of annotating each (non-reference) genome sequence based on the
+model
+
+This structure envisions a future usage in which only phase 2 is
+applied in real-time to incoming genome sequences.
+
+
+I will report on the results of applying our pipeline to all GenBank
+genome sequences as many as six viral species, including Hepatitis B
+virus, Dengue virus, and West Nile virus. The virus species used in the pilot phase
+were selected in consultation with Rodney Brister (IEB) to satisfy the following criteria:
+
+-- include species that have a large number of genome in GenBank
+
+-- include some species for which the Virus Variation Resource already has
+   annotations, for purposes of easier comparison
+
+-- include some species for which the Virus Variation Resource doe snot have
+   annotation, so as to derive some user benefit in the medium-term
+
+-- include species that have a variety of genome structures and mechanisms
+   of transcription and translation
+
+I will also provide examples of several of the error codes and discuss
+the future steps we hope to take.
+
+Further information:
+
+The code and a short tutorial (00NOTES.txt file) can be found here:
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg.pm
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg_build.pl
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg_annotate.pl
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/00NOTES.txt
+
+A document describing the error codes in more detail is here:
+/panfs/pan1/dnaorg/virseqannot/error_code_documentation/errorcodes.v5.documentation.txt
+
+The above file names and locations are accurate as of April 19th; I do
+not currently envision any reason for them to change.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+My only concern is that this is too long. I'll make a 3rd draft that
+has some of the details omitted, these are in the 3rd and 4th
+categories that Alejandro listed in his email, which he said he didn't
+feel strongly about.
+
+---------------
+The final summary, sent to David:
+
+<[(abstract-summary-20160419)]> cat summary_for_seminar_20160509.txt 
+Title: Reference-guided annotation of viral genomes
+Speaker: Eric Nawrocki (CBB)
+Date: May 9th
+Time: 1:30-2:30PM
+Location: Bldg. 38A (Lister Hill), 8th floor conference room
+
+GenBank contains more than 90,000 viral genome sequences, excluding
+influenza and partial genomes. Many of these lack annotation of
+important sequence features, such as CDS and mature peptides. One of
+the objectives of the Virus Variation Resource directed by Rodney
+Brister (IEB) is to curate these genome sequences.
+
+I will describe the pilot phase of a project I'm working on with
+Alejandro Schaffer in collaboration with Rodney Brister's group to
+develop a computational pipeline for viral genome annotation. Given a
+viral genome sequence S for species X, along with a reference
+(e.g. RefSeq) annotation for a species X genome, the pipeline computes
+annotations for S using the homology search software package Infernal
+(PMIDs 19307242, 24008419, 24639160) with reference nucleotide
+features as queries. Infernal predictions are corrected if necessary
+based on the presence of in-frame stop codons in coding regions, which
+Infernal does not detect. Currently, annotated features include CDS
+exons and mature peptide sequences.
+
+Working with Eneida Hatcher (IEB) and Olga Blinkova (IEB), I developed
+an ontogeny of errors and error descriptions to systematically
+identify sequences that either violate principles of molecular biology
+or differ so much from the reference that they should be considered
+suspect. Using this ontogeny, the pipeline also reports 'error codes'
+from a set of 17 possible codes, when an unexpected or notable
+characteristic is observed for a predicted feature. For example,
+invalid start codons, invalid stop codons, early stop codons, and the
+lack of overlap with the expected set of other features all trigger
+the report of a specific error code. The output of these codes
+includes sequence positions and other information meant to be helpful
+if a curator wanted to investigate. Though developed for viral
+sequences, the pipeline and error code scheme could be used for other
+types of sequences.
+
+I will report on the results of applying our pipeline to all GenBank
+genome sequences from six viral species, including Hepatitis B virus,
+Dengue virus, and West Nile virus. I will also provide examples of
+several of the error codes and discuss the future steps we hope to
+take.
+
+Further information:
+
+The code and a short tutorial (00NOTES.txt file) can be found here:
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg.pm
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg_build.pl
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg_annotate.pl
+/panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/00NOTES.txt
+
+A document describing the error codes in more detail is here:
+/panfs/pan1/dnaorg/virseqannot/error_code_documentation/errorcodes.v5.documentation.txt
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Now filling in the table of the top 15 viruses. 
+
+#                                                         special                               #mature
+# rank species             #accessions family          type      features  host     #cds #exons peptides   
+     1 Hepatitis B         7061        Hepadnaviridae  dsDNA-RT   circular humans      7      7        -
+     2 Dengue              3875        Flaviviridae    (+)ssRNA          - humans      1      1       14
+     3 Rotavirus           22536*      Reoviridae      dsRNA     segmented humans     12      ?        -  
+     4 HIV-1               2132        Retroviridae    ssRNA-RT          ? humans      ?      ?       14
+     5 Porcine circovirus  1559        Circoviridae    ssDNA      circular pigs        3      3        -
+     6 Hepatitis C         1457        Flaviviridae    (+)ssRNA            humans      ?      ?        ?
+     7 West Nile           2218*       Flaviviridae    (+)ssRNA            humans      ?      ?        ?
+     8 Ebola               1105        Flaviviridae    (+)ssRNA            humans      ?      ?        ?
+     9 Enterovirus A       932         Picarnoviridae  (+)ssRNA            humans      ?      ?        ?
+    10 RSV                 623         Paramyxoviridae (-)ssRNA            humans      ?      ?        ?
+    11 Enterovirus C (Polio) 618         Picarnoviridae  (+)ssRNA            humans      1      1     13
+    12 JC polyomavirus     598         Polyomaviridae  dsDNA               humans      ?      ?        ?
+    13 PRRSV               520         Arteriviridae   (+)ssRNA            pigs        ?      ?        ?     
+    14 Maize streak virus  508         Geminiviridae   ssDNA               plants      ?      ?        ?     
+    15 Norwalk virus       491         Calciviridae    (+)ssRNA            humans      ?      ?        ? 
+
+
+What's an easy way to get the number of cds, exons and mature peptides?
+
+Actually, I bet that dnaorg_build.pl would be useful for this:
+
+I've added a --skipbuild option. 
+
+Now I want to test it. I need accessions: 
+<[(virus-table)]> perl collapse-sorted-virus-list.pl sorted.all.genome.count | head -n 20 > 20.collapsed.sorted.all.genome.count
+<[(virus-table)]> cat 20.collapsed.sorted.all.genome.count 
+1	7061	NC_003977	1	Hepadnaviridae,Orthohepadnavirus,Hepatitis B virus	vertebrates,human
+2	3875	NC_002640,NC_001475,NC_001474,NC_001477	1	Flaviviridae,Flavivirus,Dengue virus	vertebrates,invertebrates,human
+3	22536	NC_011503	11	Reoviridae,Rotavirus,Rotavirus A	vertebrates,human
+4	2132	NC_001802	1	Retroviridae,Lentivirus,Human immunodeficiency virus 1	vertebrates,human
+5	1559	NC_005148	1	Circoviridae,Circovirus,Porcine circovirus 2	vertebrates
+6	1457	NC_004102,NC_009825,NC_009827,NC_009826,NC_009823,NC_009824	1	Flaviviridae,Hepacivirus,Hepatitis C virus	vertebrates,human
+7	2218	NC_009942	2	Flaviviridae,Flavivirus,West Nile virus	vertebrates,invertebrates,human
+8	1105	NC_002549	1	Filoviridae,Ebolavirus,Zaire ebolavirus	vertebrates,human
+9	932	NC_001612	1	Picornaviridae,Enterovirus,Enterovirus A	vertebrates,human
+10	623	NC_001781	1	Paramyxoviridae,Pneumovirus,Human respiratory syncytial virus	vertebrates,human
+11	618	NC_002058	1	Picornaviridae,Enterovirus,Enterovirus C	vertebrates,human
+12	598	NC_001699	1	Polyomaviridae,Polyomavirus,JC polyomavirus	vertebrates,human
+13	520	NC_001961	1	Arteriviridae,Arterivirus,Porcine reproductive and respiratory syndrome virus	vertebrates
+14	508	NC_001346	1	Geminiviridae,Mastrevirus,Maize streak virus	plants
+15	491	NC_001959,NC_029645,NC_029647,NC_008311,NC_029646	1	Caliciviridae,Norovirus,Norwalk virus	vertebrates,human
+16	466	NC_004004	1	Picornaviridae,Aphthovirus,Foot-and-mouth disease virus	vertebrates
+17	3299	NC_006010	10	Reoviridae,Orbivirus,Bluetongue virus	vertebrates,invertebrates
+18	400	NC_004005	1	Geminiviridae,Begomovirus,Tomato yellow leaf curl virus	plants
+19	396	NC_001542	1	Rhabdoviridae,Lyssavirus,Rabies virus	vertebrates,human
+20	361	NC_002617	1	Paramyxoviridae,Avulavirus,Newcastle disease virus	vertebrates,human
+
+I'll use enterovirus C: 
+<[(virus-table)]> perl /panfs/pan1/dnaorg/programs/15_0924_dnaorg_annotate_genomes/dnaorg_build.pl --skipbuild --mdlinfo --ftrinfo NC_002058
+ERROR, --skipbuild requires one or both of --mdlinfo or --ftrinfo at /panfs/pan1/dnaorg/programs/15_0924_dnaorg_annotate_genomes/dnaorg_build.pl line 152.
+<[(virus-table)]> perl /panfs/pan1/dnaorg/programs/15_0924_dnaorg_annotate_genomes/dnaorg_build.pl --skipbuild --mdlinfo --ftrinfo NC_002058
+# dnaorg_build.pl :: build homology models for features of a reference sequence
+# dnaorg 0.1 (Apr 2016)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# date:    Wed Apr 20 15:29:32 2016
+#
+# reference accession:                  NC_002058        
+# output internal model information:    yes [--mdlinfo]  
+# output internal feature information:  yes [--ftrinfo]  
+# skip the build/calibrate steps:       yes [--skipbuild]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Gathering information on reference using edirect             ... 
+ERROR, in wrapperGetInfoUsingEdirect, --matpept not enabled but mature peptide information exists, use --nomatpept to ignore it.
+
+crap.
+
+Looks like it will be hard to automate, but it might be useful one at a time:
+
+<[(virus-table)]> perl /panfs/pan1/dnaorg/programs/15_0924_dnaorg_annotate_genomes/dnaorg_build.pl -f --keep --skipbuild --mdlinfo --ftrinfo NC_005148
+
+
+<[(virus-table)]> perl /panfs/pan1/dnaorg/programs/15_0924_dnaorg_annotate_genomes/dnaorg_build.pl -f --keep --skipbuild --mdlinfo --ftrinfo NC_001802
+
+========================================
+EPN, Thu Apr 21 06:22:13 2016
+
+Okay so I have a sort wroking table. I'm going to make a slide of th
+etable, then move onto other slides, possibly coming back to this
+table later to fill in average number of annotated CDS/exons/mature
+peptides. To do that now would take a while, and I'd rather tackle
+other lower hanging fruit slides first.
+
+Making the table into a slide:
+
+Done.
+
+Committing:
+<[(talk_dnaorg_20160509)]> git add dnaorg-20160509.tex
+<[(talk_dnaorg_20160509)]> git commit -m "Added table of most prevalent viral genomes."
+[master b1d5c7f] Added table of most prevalent viral genomes.
+ 1 file changed, 161 insertions(+), 630 deletions(-)
+ rewrite dnaorg-20160509.tex (88%)
+<[(talk_dnaorg_20160509)]> git push
+Username for 'https://github.com': Javier1Bgit
+Password for 'https://Javier1Bgit@github.com': 
+
+remote: Invalid username or password.
+fatal: Authentication failed for 'https://github.com/nawrockie/talk_dnaorg_20160509.git/'
+<[(talk_dnaorg_20160509)]> git push
+Username for 'https://github.com': nawrockie
+Password for 'https://nawrockie@github.com': 
+
+Counting objects: 3, done.
+Delta compression using up to 24 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.83 KiB | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/nawrockie/talk_dnaorg_20160509.git
+   05470d8..b1d5c7f  master -> master
+
+----------------------------
+Moving onto slides that show the pilot species:
+MSV
+Dengue
+WNV
+HBV
+
+I can use Eneida's picture for WNV, hopefully.
+
+I have that one now.
+
+-------------
+Alejandro had some useful text on why we choose the pilot species that
+we did in his draft2 of the summary I sent to David Lipman earlier
+this week. That text did not make it into  the final draft, but it may
+be useful here:
+
+<[(talk_dnaorg_20160509)]> cat ../abstract-summary-20160419/abstract_draft2.txt 
+
+Relevant part:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+I will report on the results of applying our pipeline to all GenBank
+genome sequences as many as six viral species, including Hepatitis B
+virus, Dengue virus, and West Nile virus. The virus species used in the pilot phase
+were selected in consultation with Rodney Brister (IEB) to satisfy the following criteria:
+
+-- include species that have a large number of genome in GenBank
+
+-- include some species for which the Virus Variation Resource already has
+   annotations, for purposes of easier comparison
+
+-- include some species for which the Virus Variation Resource doe snot have
+   annotation, so as to derive some user benefit in the medium-term
+
+-- include species that have a variety of genome structures and mechanisms
+   of transcription and translation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using that to make a slide about selecting pilot species:
+
+I'll make my own picture for Dengue:
+
+<[(talk_dnaorg_20160509)]> cp ~/notebook/16_0201_dnaorg_annotate_genomes_documentation/repro-orig-20160315/dengue.matpept.in ./
+
+It's basically the same as for WNV, only it's 1 CDS, not 3.
+
+Making sure it's the same:
+<[(talk_dnaorg_20160509)]> cp /panfs/pan1/dnaorg/virseqannot/dengue-annotations/20160401/20160401.dengue.ser1.tbl ./
+<[(talk_dnaorg_20160509)]> cp /panfs/pan1/dnaorg/virseqannot/dengue-annotations/20160401/20160401.dengue.ser2.tbl ./
+<[(talk_dnaorg_20160509)]> cp /panfs/pan1/dnaorg/virseqannot/wnv-annotations/20160420/20160420.wnv.lin1.tbl ./
+
+Now looking at the refernece annotation:
+
+wnv-lin1                                                      dengue-ser1
+MP1    anchored capsid protein C:              97..465          95..436
+MP2    capsid protein C:                       97..411          95..394
+MP3    membrane glycoprotein precursor M:     466..966         437..934
+MP4    protein pr:                            466..741         437..709
+MP5    membrane glycoprotein M:               742..966         710..934
+MP6    envelope protein E:                    967..2469        935..2419
+MP7    NS1:                                  2470..3525       2420..3475
+MP8    NS2A:                                 3526..4218       3476..4129
+MP9    NS2B:                                 4219..4611       4130..4519
+MP10   NS3:                                  4612..6468       4520..6376
+MP11   NS4A:                                 6469..6834       6377..6757
+MP12   protein 2K:                           6835..6915       6758..6826
+MP13   NS4B:                                 6916..7680       6827..7573
+MP14   NS5:                                  7681..10395      7574..10270
+MP15.1 WARF4                                 6916..7311      
+MP15.2 WARF4                                 7311..7754
+MP16.1 NS1'                                  2470..3552
+MP16.2 NS1'                                  3552..3680
+
+<[(talk_dnaorg_20160509)]> grep CLEN ~/notebook/16_0201_dnaorg_annotate_genomes_documentation/repro-orig-20160315/NC_001477/*annotate*.cm
+CLEN     342
+CLEN     300
+CLEN     498
+CLEN     273
+CLEN     225
+CLEN     1485
+CLEN     1056
+CLEN     654
+CLEN     390
+CLEN     1857
+CLEN     381
+CLEN     69
+CLEN     747
+CLEN     2697
+
+<[(talk_dnaorg_20160509)]> grep CLEN ~/notebook/16_0201_dnaorg_annotate_genomes_documentation/repro-orig-20160315/NC_009942/NC_009942.dnaorg_annotate*cm
+CLEN     369
+CLEN     315
+CLEN     501
+CLEN     276
+CLEN     225
+CLEN     1503
+CLEN     1056
+CLEN     693
+CLEN     393
+CLEN     1857
+CLEN     366
+CLEN     81
+CLEN     765
+CLEN     2715
+CLEN     1083
+CLEN     129
+CLEN     447
+
+So they are idetnical in terms of names of proteins and organization
+so I can use CDS1 from Eneida's diagram:
+
+============================
+EPN, Fri Apr 22 09:58:59 2016
+
+Trying to figure out how many MSV CDS are annotated on average in the
+508.
+
+<[(talk_dnaorg_20160509)]> cp /panfs/pan1/dnaorg/virseqannot/msv-annotations/20160401/20160401.msv.tbl ./
+
+<[(talk_dnaorg_20160509)]> perl tbl2annotation_ct.pl 20160401.msv.tbl 
+508 accessions
+1694 (avg: 3.335) CDS annotated in GenBank
+1772 (avg: 3.488) exons annotated in GenBank
+1651 (avg: 3.250) exons match between our annotation and GenBank
+
+----------------------
+I want to show sample dnaorg_annotate.pl (and possibly
+dnaorg_build.pl) output, so I'll do that for MSV:
+
+here:
+<[(repro-NC_001346)]> perl dnaorg_build.pl -f -c NC_001346
+Can't open perl script "dnaorg_build.pl": No such file or directory
+<[(repro-NC_001346)]> perl /panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg_build.pl -f -c NC_001346
+# dnaorg_build.pl :: build homology models for features of a reference sequence
+# dnaorg 0.1 (Apr 2016)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# date:    Fri Apr 22 14:24:54 2016
+#
+# reference accession:          NC_001346
+# genome is circular:           yes [-c] 
+# forcing directory overwrite:  yes [-f] 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Gathering information on reference using edirect             ... done. [9.4 seconds]
+# Fetching and processing the reference genome                 ... done. [0.9 seconds]
+# Building models and submitting calibration jobs to the farm  ... done. [31.2 seconds]
+#
+# When the 5 cmcalibrate jobs on the farm finish, you can use dnaorg_annotate.pl
+# to use them to annotate genomes.
+#
+#
+# Output printed to screen saved in:                                  NC_001346.dnaorg_build.log
+# List of executed commands saved in:                                 NC_001346.dnaorg_build.cmd
+# List and description of all output files saved in:                  NC_001346.dnaorg_build.list
+# CM file #1, CDS#1 (currently calibrating on the farm) saved in:     NC_001346.dnaorg_build.0.cm
+# CM file #2, CDS#2 (currently calibrating on the farm) saved in:     NC_001346.dnaorg_build.1.cm
+# CM file #3, CDS#3.1 (currently calibrating on the farm) saved in:   NC_001346.dnaorg_build.2.cm
+# CM file #4, CDS#3.2 (currently calibrating on the farm) saved in:   NC_001346.dnaorg_build.3.cm
+# CM file #5, CDS#4 (currently calibrating on the farm) saved in:     NC_001346.dnaorg_build.4.cm
+#
+# All output files created in directory ./NC_001346/
+#
+# CPU time:  00:00:41.56
+#            hh:mm:ss
+# 
+# DNAORG-SUCCESS
+
+===================================
+EPN, Mon Apr 25 14:37:13 2016
+
+I want to get the NC_001346 example runs into this direcotry:
+
+<[(example-runs)]> pwd
+/home/nawrocke/notebook/16_0330_dnaorg_talk/example-runs
+
+<[(example-runs)]> dnaorg_build.pl -c NC_001346
+# dnaorg_build.pl :: build homology models for features of a reference sequence
+# dnaorg 0.1 (Apr 2016)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# date:    Mon Apr 25 15:14:54 2016
+#
+# reference accession:  NC_001346
+# genome is circular:   yes [-c] 
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Gathering information on reference using edirect             ... done. [20.9 seconds]
+# Fetching and processing the reference genome                 ... done. [3.5 seconds]
+# Building models and submitting calibration jobs to the farm  ... done. [33.7 seconds]
+#
+# When the 5 cmcalibrate jobs on the farm finish, you can use dnaorg_annotate.pl
+# to use them to annotate genomes.
+#
+#
+# Output printed to screen saved in:                                                                      NC_001346.dnaorg_build.log
+# List of executed commands saved in:                                                                     NC_001346.dnaorg_build.cmd
+# List and description of all output files saved in:                                                      NC_001346.dnaorg_build.list
+# CM file #1, CDS#1(currently calibrating on the farm) saved in:                                          NC_001346.dnaorg_build.0.cm
+# CM file #2, CDS#2(currently calibrating on the farm) saved in:                                          NC_001346.dnaorg_build.1.cm
+# CM file #3, CDS#3.1(currently calibrating on the farm) saved in:                                        NC_001346.dnaorg_build.2.cm
+# CM file #4, CDS#3.2(currently calibrating on the farm) saved in:                                        NC_001346.dnaorg_build.3.cm
+# CM file #5, CDS#4(currently calibrating on the farm) saved in:                                          NC_001346.dnaorg_build.4.cm
+# Shell script to submit cmcalibrate commands with (already executed, jobs submitted to farm) saved in:   NC_001346.dnaorg_build.ref.cm.qsub
+#
+# All output files created in directory ./NC_001346/
+#
+# CPU time:  00:00:58.13
+#            hh:mm:ss
+# 
+# DNAORG-SUCCESS
+
+<[(example-runs)]> dnaorg_annotate.pl -c --origin TAATATT\|AC NC_001346.ntlist
+# dnaorg_annotate.pl :: annotate sequences based on a reference annotation
+# dnaorg 0.1 (Apr 2016)
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# date:    Mon Apr 25 15:44:14 2016
+#
+# file with list of accessions:        NC_001346.ntlist     
+# genome is closed (a.k.a. circular):  yes [-c]             
+# identify origin seq <s> in genomes:  TAATATT|AC [--origin]
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Gathering information on 508 sequences using edirect                                  ... done. [86.7 seconds]
+# Fetching all sequences and processing the reference genome                            ... done. [78.7 seconds]
+# Creating CM database by concatenating individual CM files                             ... done. [0.5 seconds]
+# Preparing the CM database for homology search using cmpress                           ... done. [0.2 seconds]
+# Verifying CM database created for current reference NC_001346                         ... done. [0.0 seconds]
+# Submitting 425 cmscan jobs to the farm                                                ... done. [82.9 seconds]
+# Waiting a maximum of 500 minutes for all farm jobs to finish                          ... done. [60.8 seconds]
+# Parsing cmscan results                                                                ... done. [0.1 seconds]
+# Calculating predicted feature lengths                                                 ... done. [0.0 seconds]
+# Fetching cmscan predicted hits into fasta files                                       ... done. [0.1 seconds]
+# Combining predicted exons into CDS                                                    ... done. [0.1 seconds]
+# Combining predicted mature peptides into CDS                                          ... done. [0.0 seconds]
+# Identifying internal starts/stops in coding sequences                                 ... done. [10.5 seconds]
+# Correcting homology search stop codon predictions to account for observed stop codons ... done. [0.0 seconds]
+# Identifying overlap and adjacency errors                                              ... done. [0.1 seconds]
+# Finalizing annotations and validating error combinations                              ... done. [0.5 seconds]
+# Fetching corrected matches into fasta files                                           ... done. [0.1 seconds]
+# Combining corrected exons into CDS                                                    ... done. [0.9 seconds]
+# Combining corrected mature peptides into CDS                                          ... done. [0.0 seconds]
+# Translating corrected nucleotide features into protein sequences                      ... done. [7.7 seconds]
+# Generating error code output                                                          ... done. [0.0 seconds]
+# Generating tabular annotation output                                                  ... done. [0.1 seconds]
+#
+# Annotated 508 accessions, 5 (0.0098 fraction) had at least one annotation 'failure', see NC_001346.dnaorg_annotate.tbl for all details.
+# Table below includes counts of error codes
+#
+# Explanation of columns:
+# "code"       : the error code
+# "#tot"       : total number of occurences of code , possibly > 1 for some accessions
+# "#accn"      : number of accessions with at least 1 occurence of code
+# "fraction...": fraction of all 508 accessions with at least 1 occurence of code
+#
+# Explanation of final two rows beginning with "total" and "any":
+#   "total":"#tot"   column is total number of error codes reported
+#   "any":"#tot"     column is number of accessions with >= 1 error code
+#   "any":"fraction" column is fraction of accessions with >= 1 error code
+#code   #tot  #accn  fraction-of-all-508-accn
+#----  -----  -----  ------
+  ori      2      2  0.0039
+  nop      0      0  0.0000
+  nm3      0      0  0.0000
+  bd5      0      0  0.0000
+  bd3      0      0  0.0000
+  olp      6      3  0.0059
+  str      0      0  0.0000
+  stp     52     52  0.1024
+  ajb      0      0  0.0000
+  aja      0      0  0.0000
+  trc    179    177  0.3484
+  ext      0      0  0.0000
+  ntr      0      0  0.0000
+  nst      0      0  0.0000
+  aji      0      0  0.0000
+  int      0      0  0.0000
+  inp      0      0  0.0000
+#----  -----  -----  ------
+total    239      -       -
+  any    178      -  0.3504
+#
+# Output printed to screen saved in:                                                   NC_001346.dnaorg_annotate.log
+# List of executed commands saved in:                                                  NC_001346.dnaorg_annotate.cmd
+# List and description of all output files saved in:                                   NC_001346.dnaorg_annotate.list
+# CM file (a concatenation of individual files created by dnaorg_build.pl) saved in:   NC_001346.dnaorg_annotate.ref.cm
+# All annotations in tabular format saved in:                                          NC_001346.dnaorg_annotate.tbl
+# Summary of all annotations saved in:                                                 NC_001346.dnaorg_annotate.tbl.summary
+# Annotations for all sequences with >= 1 failure in tabular format saved in:          NC_001346.dnaorg_annotate.fail.tbl
+# Annotations for all sequences with >= 1 error in tabular format saved in:            NC_001346.dnaorg_annotate.error.tbl
+# List of errors, one line per sequence saved in:                                      NC_001346.dnaorg_annotate.peraccn.errors
+# List of errors, one line per error saved in:                                         NC_001346.dnaorg_annotate.all.errors
+# Summary of all errors saved in:                                                      NC_001346.dnaorg_annotate.errors.summary
+#
+# All output files created in directory ./NC_001346/
+#
+# CPU time:  00:05:34.66
+#            hh:mm:ss
+# 
+# DNAORG-SUCCESS
+
+===================================
+EPN, Tue Apr 26 07:36:06 2016
+
+Ideas for slides:
+
+- slide showing what exactly happens for MSV
+  and Dengue:
+  RefSeq diagram -> # models -> annotations -> corrections ->
+  annotations + errors
+
+- graphical slide(s) showing all 17 error codes.
+
+Running Dengue: NC_002640
+
+<[(example-runs)]> dnaorg_build.pl --matpept dengue.matpept.in NC_002640
+
+
+
