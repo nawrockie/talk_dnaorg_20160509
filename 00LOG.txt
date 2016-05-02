@@ -1168,6 +1168,71 @@ Running Dengue: NC_002640
 <[(example-runs)]> dnaorg_build.pl --matpept dengue.matpept.in NC_002640
 
 ==================================
-EPN, Fri Apr 29 09:01:35 2016
+EPN, Mon May  2 09:52:40 2016
+
+New idea for outline:
+
+1. introduction
+  - top 20 virus list
+  - Virus variation database
+  - goal of our project: help ViV
+
+2. pilot phase
+  - 4 selected genomes
+  - one slide per 4 selected genomes (why they were selected and
+    genome organization)
+
+3. what the code does:
+  - schematic of what code does (for both CDS/mature peptide)
+  - flow chart of actual code with program names
+
+4. trace of pipeline for MSV 
+  - screen shot of dnaorg_build.pl
+  - screen shot(s) of dnaorg_annotate.pl
+  - screen shot of tabular output
+  - screen shot of error summary
+
+5. error code schematics
+
+6 or 7. examples of error codes
+
+6 or 7. pilot stats
+
+8. future directions
+  - short term
+  - long term
+
+-----------------
+Maybe this is better:
+
+1. introduction
+2. pilot phase
+3. what the code does:
+  - schematic of what code does (for both CDS/mature peptide)
+5. error code schematics
+6. pilot stats
+
+then
+7. examples of error codes
+
+or
+- flow chart of actual code
+- trace of pipeline for MSV 
+  - screen shot of dnaorg_build.pl
+  - screen shot(s) of dnaorg_annotate.pl
+  - screen shot of tabular output
+  - screen shot of error summary
+
+then other
+
+8. future directions
+  - short term
+  - long term
+
+
+  
+
+
+
 
 
