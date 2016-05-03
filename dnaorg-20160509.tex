@@ -69,7 +69,7 @@ National Institutes of Health\\
        &                    &              &                &          &        &       &          \\ 
      2 & Dengue             &         3875 & Flaviviridae   & (+)ssRNA & humans &     1 &      14  \\
        &                    &              &                &          &        &       &          \\ 
-     3 & Rotavirus          &      22536*  & Reoviridae     & dsRNA    & humans &    12 &       -  \\
+     3 & Rotavirus          &      22536\footnote{sum of 11 segments}  & Reoviridae     & dsRNA    & humans &    12 &       -  \\
        &                    &              &                &          &        &       &          \\ 
      4 & HIV-1              &        2132  & Retroviridae   & ssRNA-RT & humans &    10 &      14  \\
        &                    &              &                &          &        &       &          \\ 
@@ -119,20 +119,35 @@ National Institutes of Health\\
 %\end{tabular}
 
 \end{center}
+\tiny
+\flushright{$\dagger$ sum of 11 segments}
+\vfill
+
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
 \textbf{The Virus Variation Resource is a powerful tool for viral research}
 
-\small
+\begin{minipage}[c]{4in}
+\tiny
 \begin{itemize}
-\item value added database includes annotations not in GenBank
-\item allows users to download alignments, compute trees and select
-  subsets of data based on desired criteria
+\item value added database that includes annotations not in GenBank
+\item allows users to: 
+\begin{itemize}
+  \item select subsets of data based on desired criteria
+    (host, country, gene, etc.)
+  \item download alignments
+  \item  compute trees
+  \item  more...
 \end{itemize}
-
-\includegraphics[width=7in]{figs/viv-page1}
+\end{itemize}
+\vfill
+\end{minipage}
+\begin{minipage}[c]{6in}
+\includegraphics[width=6in]{figs/viv-page1}
+\vfill
+\end{minipage}
 
 \vfill
 \end{center}
@@ -177,7 +192,7 @@ National Institutes of Health\\
 \begin{slide}
 \begin{center}
 
-\textbf{Four pilot species were chosen from the 15 most common}
+\textbf{Four pilot species were chosen from the 15 most prevalent}
 
 \tiny
 \begin{tabular}{r|l|r|l|l|l|r|r}
@@ -217,30 +232,62 @@ National Institutes of Health\\
 
 \end{center}
 
+\tiny
+\flushright{$\dagger$ sum of 11 segments}
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Maize Streak Virus}
 
-\includegraphics[width=10in]{figs/msv-slide}
+\begin{minipage}[c]{6in}
+\tiny
+\begin{itemize}
+\item cause of most serious crop disease in Africa, responsible for
+  between USD\$100-\$500 million of crop loss per year
+\item NC\_001346 (2689 nt):
+  \begin{itemize}
+    \item 4 CDS (V1, V2, C1, C1:C2), 5 total ‘exons’
+    \item both strands have $>=$ 1 CDS
+    \item one CDS (C1:C2) has two segments (exons)
+    \item origin sequence: TAATATT$|$AC
+  \end{itemize}
+\item circular genome
+\item 508 full genome sequences in GenBank
+\begin{itemize}
+  \item average number of CDS annotated: 3.34
+%  \item average number of exons annotated: ?
+\end{itemize}
+\end{itemize}
+\vspace{3in}
+\end{minipage}
+\begin{minipage}[c]{4in}
+\includegraphics[width=4in]{figs/msv-genome-small}
+\vspace{3in}
+\end{minipage}
 
-\end{center}
 \vfill
+\end{center}
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
 \textbf{Dengue virus}
 
-\includegraphics[width=8in]{figs/dengue-genome-organization}
-
-\includegraphics[width=8in]{figs/dengue-eneida}
-
+\small
 \begin{itemize}
-\item a single flavivirus polyprotein gene is translated
-\item the polyprotein is cleaved into 14 smaller mature peptides
+\item up to 400 million people infected per year worldwide
+\item a single CDS encodes the flavivirus polyprotein gene
+\item the polyprotein is cleaved into 14 smaller 'mature peptides'
+\item annotations exist in Virus Variation to compare against our own
 \end{itemize}
+
+\includegraphics[width=9.5in]{figs/dengue-genome-organization}
+
+\includegraphics[width=9.5in]{figs/dengue-eneida}\footnote{illustration
+  by Eneida Hatcher}
+
 
 \end{center}
 \vfill
@@ -249,17 +296,20 @@ National Institutes of Health\\
 \begin{slide}
 \begin{center}
 \textbf{West Nile virus}
-\begin{end}
-  
-\begin{center}
-\includegraphics[width=10in]{figs/flavi-wnv-eneida}\footnote{illustration
-  by Eneida Hatcher}
-\end{center}
 
+\small  
 \begin{itemize}
 \item another flavivirus, similar to Dengue
-\item the polyprotein is cleaved into 14 smaller 'mature peptides'
+\item 3 CDS, including:
+\begin{itemize}
+  \item two CDS that utilize ribosomal frameshift to change reading
+    frame, \\ possibly complicating annotation
+\item West Nile annotations do not yet exist in Virus Variation
 \end{itemize}
+\end{itemize}
+
+\includegraphics[width=8in]{figs/flavi-wnv-eneida}\footnote{illustration
+  by Eneida Hatcher}
 
 \end{center}
 \vfill
