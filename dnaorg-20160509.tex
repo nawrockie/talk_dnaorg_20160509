@@ -186,8 +186,47 @@ National Institutes of Health\\
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% 
-% Pilot species:
+\begin{slide}
+\begin{center}
+\textbf{Outline of talk}
+
+\small
+\begin{itemize}
+\item Selection of four pilot viral species
+\item Overview of annotation pipeline
+\item Explanation of ``error codes''
+\item Statistics on pilot phase annotations
+\item Examples of ``error codes''
+\item Implementation of annotation pipeline
+\item Interaction with Rodney's Virus Variation group
+\item Future directions
+\end{itemize}
+
+\end{center}
+\vfill
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+\begin{center}
+\textbf{Outline of talk}
+
+\small
+\begin{itemize}
+\item \textcolor{blue}{Selection of four pilot viral species}
+\item Overview of annotation pipeline
+\item Explanation of ``error codes''
+\item Statistics on pilot phase annotations
+\item Examples of ``error codes''
+\item Implementation of annotation pipeline
+\item Interaction with Rodney's Virus Variation group
+\item Future directions
+\end{itemize}
+
+\end{center}
+\vfill
+\end{slide}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
@@ -199,9 +238,9 @@ National Institutes of Health\\
        &                    &              &                &          &        &       & \#mature \\ 
   rank & species            &       \#seqs & family         & type     & host   & \#cds & peptides \\ \hline
        &                    &              &                &          &        &       &          \\ 
-\textcolor{red}{1} & \textcolor{red}{Hepatitis B}        &         \textcolor{red}{7061} & \textcolor{red}{Hepadnaviridae} & \textcolor{red}{dsDNA-RT} & \textcolor{red}{humans} &     \textcolor{red}{7} &       \textcolor{red}{-}  \\
+\textcolor{blue}{1} & \textcolor{blue}{Hepatitis B}        &         \textcolor{blue}{7061} & \textcolor{blue}{Hepadnaviridae} & \textcolor{blue}{dsDNA-RT} & \textcolor{blue}{humans} &     \textcolor{blue}{7} &       \textcolor{blue}{-}  \\
        &                    &              &                &          &        &       &          \\ 
-\textcolor{red}{2} & \textcolor{red}{Dengue}             &         \textcolor{red}{3875} & \textcolor{red}{Flaviviridae}   & \textcolor{red}{(+)ssRNA} & \textcolor{red}{humans} &     \textcolor{red}{1} &      \textcolor{red}{14}  \\
+\textcolor{blue}{2} & \textcolor{blue}{Dengue}             &         \textcolor{blue}{3875} & \textcolor{blue}{Flaviviridae}   & \textcolor{blue}{(+)ssRNA} & \textcolor{blue}{humans} &     \textcolor{blue}{1} &      \textcolor{blue}{14}  \\
        &                    &              &                &          &        &       &          \\ 
      3 & Rotavirus          &      22536*  & Reoviridae     & dsRNA    & humans &    12 &       -  \\
        &                    &              &                &          &        &       &          \\ 
@@ -209,7 +248,7 @@ National Institutes of Health\\
        &                    &              &                &          &        &       &          \\ 
      5 & Porcine circovirus &        1559  & Circoviridae   & ssDNA    & pigs   &     3 &       -  \\
        &                    &              &                &          &        &       &          \\ 
-     \textcolor{red}{6} & \textcolor{red}{West Nile}          &        \textcolor{red}{1109} & \textcolor{red}{Flaviviridae}   & \textcolor{red}{(+)ssRNA} & \textcolor{red}{humans} &     \textcolor{red}{3} &      \textcolor{red}{16}  \\
+     \textcolor{blue}{6} & \textcolor{blue}{West Nile}          &        \textcolor{blue}{1109} & \textcolor{blue}{Flaviviridae}   & \textcolor{blue}{(+)ssRNA} & \textcolor{blue}{humans} &     \textcolor{blue}{3} &      \textcolor{blue}{16}  \\
        &                    &              &                &          &        &       &          \\ 
      7 & Hepatitis C        &        1457  & Flaviviridae   & (+)ssRNA & humans &     2 &      10  \\
        &                    &              &                &          &        &       &          \\ 
@@ -225,7 +264,7 @@ National Institutes of Health\\
        &                    &              &                &          &        &       &          \\ 
     13 & PRRSV              &          520 & Arteriviridae  & (+)ssRNA & pigs   &    11 &      13  \\ %# 15 mat_peptide segments, 13 mat_peptides 
        &                    &              &                &          &        &       &          \\ 
-    \textcolor{red}{14} & \textcolor{red}{Maize streak virus} &          \textcolor{red}{508} & \textcolor{red}{Geminiviridae}  & \textcolor{red}{ssDNA}    & \textcolor{red}{plants} &     \textcolor{red}{4} &      \textcolor{red}{-}   \\
+    \textcolor{blue}{14} & \textcolor{blue}{Maize streak virus} &          \textcolor{blue}{508} & \textcolor{blue}{Geminiviridae}  & \textcolor{blue}{ssDNA}    & \textcolor{blue}{plants} &     \textcolor{blue}{4} &      \textcolor{blue}{-}   \\
        &                    &              &                &          &        &       &          \\ 
     15 & Norwalk virus      &          491 &  Calciviridae  & (+)ssRNA & humans &     3 &       6  \\ 
 \end{tabular}
@@ -233,7 +272,7 @@ National Institutes of Health\\
 \end{center}
 
 \tiny
-\flushright{$\dagger$ sum of 11 segments}
+\flushright{$*$ sum of 11 segments}
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -277,7 +316,7 @@ National Institutes of Health\\
 
 \small
 \begin{itemize}
-\item up to 400 million people infected per year worldwide
+\item up to 400 million people infected per year worldwide (CDC)
 \item a single CDS encodes the flavivirus polyprotein gene
 \item the polyprotein is cleaved into 14 smaller 'mature peptides'
 \item annotations exist in Virus Variation to compare against our own
@@ -318,57 +357,112 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
-\textbf{Hepatitis B virus}
+\textbf{Hepatitis B Virus}
 
-\includegraphics[height=6in]{figs/hbv-genome}
-
+\begin{minipage}[c]{6in}
+\tiny
 \begin{itemize}
-\item non-flu virus with most full length sequences in GenBank
-\item circular genome like MSV
-\item circular genome like MSV
+\item causes a serious liver infection in more than 200,000 people in
+  the US per year
+\item NC\_003977 (3182 nt):
+  \begin{itemize}
+    \item 7 single exon CDS, all on positive strand
+    \item one CDS (C1:C2) has two segments (exons)
+    \item origin sequence: TAATATT$|$AC
+  \end{itemize}
+\item circular genome
+\item 7061 full genome sequences in GenBank
+\begin{itemize}
+  \item average number of CDS annotated: (TODO)
+%  \item average number of exons annotated: ?
 \end{itemize}
+\end{itemize}
+\vspace{3in}
+\end{minipage}
+\begin{minipage}[c]{4in}
+\includegraphics[width=4in]{figs/hbv-genome-small-lowres}
+\vspace{3in}
+\end{minipage}
 
 \vfill
 \end{center}
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
+\begin{center}
 \includegraphics[width=10in]{figs/annotation-schematic-msv-1}
+\end{center}
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
+\begin{center}
 \includegraphics[width=10in]{figs/annotation-schematic-msv-2}
+\end{center}
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
+\begin{center}
 \includegraphics[width=10in]{figs/annotation-schematic-msv-3}
+\end{center}
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
+\begin{center}
 \includegraphics[width=10in]{figs/annotation-schematic-msv-4}
+\end{center}
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
+\begin{center}
 \includegraphics[width=10in]{figs/annotation-schematic-dengue-1}
+\end{center}
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
+\begin{center}
 \includegraphics[width=10in]{figs/annotation-schematic-dengue-2}
+\end{center}
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
+\begin{center}
 \includegraphics[width=10in]{figs/annotation-schematic-dengue-3}
+\end{center}
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
+\begin{center}
 \includegraphics[width=10in]{figs/annotation-schematic-dengue-4-with-output}
+\end{center}
+\vfill
+\end{slide}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+\begin{center}
+\textbf{Error codes: 17 abnormal situations}
+
+\small
+\begin{itemize}
+\item Per-feature errors:
+\begin{itemize}
+\item unexpected stop codon-related errors (trc, ntr, ext, nst)
+\item lack of expected features (str, stp, nm3)
+\item problem with homology search step (bd5, bd3, nop)
+\item unexpected relationship to other features (olp, aja, ajb)
+\item problem annotating CDS due to mature peptide errors (aji, int, inp)
+\end{itemize}
+\item Per-sequence errors:
+\item lack of single origin sequence (ori)
+\end{itemize}
+
+\end{center}
 \vfill
 \end{slide}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

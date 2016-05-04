@@ -1229,6 +1229,19 @@ then other
   - short term
   - long term
 
+============================
+EPN, Wed May  4 16:31:30 2016
+
+Weak points:
+- why we picked the 4 viruses that we did
+
+To correct (necessarily):
+
+To correct (if time permits):
+
+- error-trc-ntr, str-stp-nm3, bd5-bd3-nop slide, mp needs to be
+  capitalized in no errors row and space removed
+- error-olp, space in MP #i
 
   
 
