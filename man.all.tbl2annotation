@@ -1,0 +1,71 @@
+
+
+                                                                -----------------------------------------------------------------
+                                                                |                |               |                |              |
+                                                                |  Maize streak  |     Dengue    |   West Nile    | Hepatitis B  |
+                                                                |                | (4 serologies |  (2 lineages   |              |
+                                                                |                |     summed    |   summed)      |              |
+                                                                |                |               |                |              |
+                                                                -----------------|--------------------------------|--------------|
+                                                                |                |               |                |              |
+                                                   # accessions |            508 |          3769 |           1097 |         6998 |
+                                                                |                |               |                |              |
+                                                   # CDS/MP     |       3 (CDS)  |       14 (MP) |        16 (MP) |      7 (CDS) |
+                                                                |                |               |                |              |
+                                                   # Exons/MP   |      4 (exons) |       14 (MP) |  16 or 18 (MP) |    7 (exons) |
+                                                                |                |               |                |              |
+                                                                |----------------|---------------|----------------|--------------| 
+                                                                |                |               |                |              |   
+                                  # CDS/MP annotated in GenBank |    1694 (3.34) |  34371 (9.12) |    8004 (7.30) | 34060 (4.87) |   
+                                                                |                |               |                |              |   
+                                # Exons/MP annotated in GenBank |    1772 (3.48) |  34371 (9.12) |    8006 (7.30) | 34080 (4.87) |   
+                                                                |                |               |                |              |   per-accession
+                                                                |----------------|---------------|----------------|--------------|   averages are
+                                                                |                |               |                |              |   in ()
+                                    # Exons/MP annotations that |                |               |                |              |   
+                                   match b/t GenBank & pipeline |    1651 (3.25) |  32195 (8.54) |    7583 (6.91) | 29399 (4.20) |   
+                                                                |                |               |                |              |   
+                                    # Exons/MP annotations that |                |               |                |              |   
+                            do not match b/t GenBank & pipeline |     121 (0.24) |   2176 (0.58) |    423  (0.39) |  4681 (0.67) |   
+                                                                |                |               |                |              |   
+                                                                |                |               |                |              |   
+                                   # new Exons/MP from pipeline |     768 (1.51) |  18395 (4.88) |    9546 (8.70) | 14906 (2.13) |   
+                                                                |                |               |                |              |   
+                                                                ------------------------------------------------------------------ 
+
+
+MSV:
+508 accessions
+1694 (avg: 3.335) cds annotated in GenBank
+1772 (avg: 3.488) exons annotated in GenBank
+1651 (avg: 3.250) exons match between our annotation and GenBank
+121 (avg: 0.238) exons disagree between our annotation and GenBank
+2540 (avg: 5.000) exons annotated by our pipeline (minus any nop errors)
+768 (avg: 1.512) new exon annotations by our pipeline (minus any nop errors)
+
+Dengue:
+3769 accessions
+34371 (avg: 9.119) mp annotated in GenBank
+34371 (avg: 9.119) exons annotated in GenBank
+32195 (avg: 8.542) exons match between our annotation and GenBank
+2176 (avg: 0.577) exons disagree between our annotation and GenBank
+52766 (avg: 14.000) exons annotated by our pipeline (minus any nop errors)
+18395 (avg: 4.881) new exon annotations by our pipeline (minus any nop errors)
+
+WNV: 
+1097 accessions
+8004 (avg: 7.296) mp annotated in GenBank
+8006 (avg: 7.298) exons annotated in GenBank
+7583 (avg: 6.912) exons match between our annotation and GenBank
+423 (avg: 0.386) exons disagree between our annotation and GenBank
+17552 (avg: 16.000) exons annotated by our pipeline (minus any nop errors)
+9546 (avg: 8.702) new exon annotations by our pipeline (minus any nop errors)
+
+HBV:
+6998 accessions
+34060 (avg: 4.867) cds annotated in GenBank
+34080 (avg: 4.870) exons annotated in GenBank
+29399 (avg: 4.201) exons match between our annotation and GenBank
+4681 (avg: 0.669) exons disagree between our annotation and GenBank
+48986 (avg: 7.000) exons annotated by our pipeline (minus any nop errors)
+14906 (avg: 2.130) new exon annotations by our pipeline (minus any nop errors)

@@ -1250,7 +1250,9 @@ TODO:
 1. pilot stats
 2. future directions
 3. incorporate Eneida's slides
-4. error code examples
+4. acknowledgements
+5. error code examples
+6. practice talk
 
 Getting pilot stats as a latex table:
 
@@ -1262,6 +1264,19 @@ number of annotations that agree with genbank
 
 First, I'll just make a text table and take a screen shot, if this
 doesn't look good and time permits I'll try to make a tex table.
+
+----------------
+Making that table, ehre:
+
+<[(annotation-files)]> pwd
+/home/nawrocke/notebook/16_0330_dnaorg_talk/annotation-files
+<[(annotation-files)]> cp /panfs/pan1/dnaorg/virseqannot/wnv-annotations/20160420/20160420.wnv.lin* ./
+
+<[(annotation-files)]> ls *errors.summary
+20160401.dengue.ser1.errors.summary  20160420.wnv.lin1.errors.summary
+20160401.hbv.errors.summary	     20160420.wnv.lin2.errors.summary
+20160401.msv.errors.summary
+
 
 
 
