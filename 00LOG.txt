@@ -1243,7 +1243,27 @@ To correct (if time permits):
   capitalized in no errors row and space removed
 - error-olp, space in MP #i
 
-  
+===========================
+EPN, Thu May  5 09:53:08 2016
+
+TODO:
+1. pilot stats
+2. future directions
+3. incorporate Eneida's slides
+4. error code examples
+
+Getting pilot stats as a latex table:
+
+number of genomes
+number of lineages/serologies
+number with 0 errors
+number of each error code
+number of annotations that agree with genbank
+
+First, I'll just make a text table and take a screen shot, if this
+doesn't look good and time permits I'll try to make a tex table.
+
+
 
 
 

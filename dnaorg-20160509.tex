@@ -191,37 +191,14 @@ National Institutes of Health\\
 \textbf{Outline of talk}
 
 \small
-\begin{itemize}
-\item Selection of four pilot viral species
-\item Overview of annotation pipeline
-\item Explanation of ``error codes''
-\item Statistics on pilot phase annotations
-\item Examples of ``error codes''
-\item Implementation of annotation pipeline
-\item Interaction with Rodney's Virus Variation group
-\item Future directions
-\end{itemize}
-
-\end{center}
-\vfill
-\end{slide}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{slide}
-\begin{center}
-\textbf{Outline of talk}
-
-\small
-\begin{itemize}
-\item \textcolor{blue}{Selection of four pilot viral species}
-\item Overview of annotation pipeline
-\item Explanation of ``error codes''
-\item Statistics on pilot phase annotations
-\item Examples of ``error codes''
-\item Implementation of annotation pipeline
-\item Interaction with Rodney's Virus Variation group
-\item Future directions
-\end{itemize}
+\begin{description}
+\item[\textcolor{blue}1.] \textcolor{blue}{Selection of four pilot viral species}
+\item[2.] Overview of annotation pipeline and explanation of ``error codes''
+\item[3.] Statistics on pilot phase annotations and examples of ``error codes''
+\item[4.] Implementation of annotation pipeline
+\item[5.] Interaction with Rodney's Virus Variation group
+\item[6.] Future directions
+\end{description}
 
 \end{center}
 \vfill
@@ -390,6 +367,25 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Outline of talk}
+
+\small
+\begin{description}
+\item[1.] Selection of four pilot viral species
+\item[\textcolor{blue}2.] \textcolor{blue}{Overview of annotation pipeline and explanation of ``error codes''}
+\item[3.] Statistics on pilot phase annotations and examples of ``error codes''
+\item[4.] Implementation of annotation pipeline
+\item[5.] Interaction with Rodney's Virus Variation group
+\item[6.] Future directions
+\end{description}
+
+\end{center}
+\vfill
+\end{slide}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{slide}
+\begin{center}
 \includegraphics[width=10in]{figs/annotation-schematic-msv-1}
 \end{center}
 \vfill
@@ -450,16 +446,18 @@ National Institutes of Health\\
 
 \small
 \begin{itemize}
-\item Per-feature errors:
+\item Per-feature (e.g. CDS, mature peptide) errors:
 \begin{itemize}
-\item unexpected stop codon-related errors (trc, ntr, ext, nst)
-\item lack of expected features (str, stp, nm3)
-\item problem with homology search step (bd5, bd3, nop)
-\item unexpected relationship to other features (olp, aja, ajb)
-\item problem annotating CDS due to mature peptide errors (aji, int, inp)
+\item Unexpected stop codon errors (trc, ext, nst, ntr)
+\item Missing expected features (str, stp, nm3)
+\item Problem with homology search prediction (bd5, bd3, nop)
+\item Unexpected relationship to other features (olp, aja, ajb)
+\item Problem annotating CDS due to mature peptide errors (aji, int, inp)
 \end{itemize}
 \item Per-sequence errors:
-\item lack of single origin sequence (ori)
+\begin{itemize} 
+\item Lack of exactly one origin sequence (ori)
+\end{itemize}
 \end{itemize}
 
 \end{center}
@@ -468,6 +466,9 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Unexpected stop codon errors (trc,ntr)}
+\vspace{0.5in}
+
 \includegraphics[width=10in]{figs/error-1-trc-ntr}
 \end{center}
 \vfill
@@ -475,6 +476,9 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Unexpected stop codon errors (ext,nst)}
+\vspace{0.5in}
+
 \includegraphics[width=10in]{figs/error-2-ext-nst}
 \end{center}
 \vfill
@@ -482,6 +486,9 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Missing expected features (str,stp,nm3)}
+\vspace{0.5in}
+
 \includegraphics[width=10in]{figs/error-3-str-stp-nm3}
 \end{center}
 \vfill
@@ -489,6 +496,9 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Problem with homology search prediction (bd5,bd3,nop)}
+\vspace{0.5in}
+
 \includegraphics[width=10in]{figs/error-4-bd5-bd3-nop}
 \end{center}
 \vfill
@@ -496,6 +506,9 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Unexpected relationship to other features (olp)}
+\vspace{0.5in}
+
 \includegraphics[width=10in]{figs/error-5-olp}
 \end{center}
 \vfill
@@ -503,6 +516,9 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Unexpected relationship to other features (ajb)}
+\vspace{0.5in}
+
 \includegraphics[width=10in]{figs/error-6-ajb}
 \end{center}
 \vfill
@@ -510,6 +526,9 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Unexpected relationship to other features (aja)}
+\vspace{0.5in}
+
 \includegraphics[width=10in]{figs/error-7-aja}
 \end{center}
 \vfill
@@ -517,6 +536,9 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Problem annotating CDS due to mature peptide errors (aji,int,inp)}
+\vspace{0.5in}
+
 \includegraphics[width=10in]{figs/error-8-aji-int-inp}
 \end{center}
 \vfill
@@ -524,6 +546,9 @@ National Institutes of Health\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{slide}
 \begin{center}
+\textbf{Lack of exactly one origin sequence (ori)}
+\vspace{0.5in}
+
 \includegraphics[width=10in]{figs/error-9-ori}
 \end{center}
 \vfill
