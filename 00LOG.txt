@@ -1452,3 +1452,14 @@ inp  0   2    2    0  2  2
 --------------------------------
 tot 124  72  196
 any  33  14  47
+
+-----------------------------
+After meeting with Alejandro:
+
+todo:
+1. add date to slide 2
+2. cleavage in 2 rounds on Dengue slide
+3. in the over view Rodney --> J. Rodney Brister's
+4. Get rid of dashes in alignment depictions.
+
+
