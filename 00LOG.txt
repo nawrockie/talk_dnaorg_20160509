@@ -987,6 +987,8 @@ dnaorg_build.pl) output, so I'll do that for MSV:
 here:
 <[(repro-NC_001346)]> perl dnaorg_build.pl -f -c NC_001346
 Can't open perl script "dnaorg_build.pl": No such file or directory
+
+
 <[(repro-NC_001346)]> perl /panfs/pan1/dnaorg/virseqannot/code/dnaorg_scripts/dnaorg_build.pl -f -c NC_001346
 # dnaorg_build.pl :: build homology models for features of a reference sequence
 # dnaorg 0.1 (Apr 2016)
@@ -1021,6 +1023,8 @@ Can't open perl script "dnaorg_build.pl": No such file or directory
 # 
 # DNAORG-SUCCESS
 
+
+
 ===================================
 EPN, Mon Apr 25 14:37:13 2016
 
@@ -1049,11 +1053,11 @@ I want to get the NC_001346 example runs into this direcotry:
 # Output printed to screen saved in:                                                                      NC_001346.dnaorg_build.log
 # List of executed commands saved in:                                                                     NC_001346.dnaorg_build.cmd
 # List and description of all output files saved in:                                                      NC_001346.dnaorg_build.list
-# CM file #1, CDS#1(currently calibrating on the farm) saved in:                                          NC_001346.dnaorg_build.0.cm
-# CM file #2, CDS#2(currently calibrating on the farm) saved in:                                          NC_001346.dnaorg_build.1.cm
-# CM file #3, CDS#3.1(currently calibrating on the farm) saved in:                                        NC_001346.dnaorg_build.2.cm
-# CM file #4, CDS#3.2(currently calibrating on the farm) saved in:                                        NC_001346.dnaorg_build.3.cm
-# CM file #5, CDS#4(currently calibrating on the farm) saved in:                                          NC_001346.dnaorg_build.4.cm
+# CM file #1, CDS#1 (currently calibrating on the farm) saved in:                                         NC_001346.dnaorg_build.0.cm
+# CM file #2, CDS#2 (currently calibrating on the farm) saved in:                                         NC_001346.dnaorg_build.1.cm
+# CM file #3, CDS#3.1 (currently calibrating on the farm) saved in:                                       NC_001346.dnaorg_build.2.cm
+# CM file #4, CDS#3.2 (currently calibrating on the farm) saved in:                                       NC_001346.dnaorg_build.3.cm
+# CM file #5, CDS#4 (currently calibrating on the farm) saved in:                                         NC_001346.dnaorg_build.4.cm
 # Shell script to submit cmcalibrate commands with (already executed, jobs submitted to farm) saved in:   NC_001346.dnaorg_build.ref.cm.qsub
 #
 # All output files created in directory ./NC_001346/
@@ -1251,8 +1255,14 @@ TODO:
 2. future directions
 3. incorporate Eneida's slides
 4. acknowledgements
-5. error code examples
-6. practice talk
+5. screen shots of output
+6. error code examples
+7. infernal vs hmmer
+8. practice talk
+others:
+- fractional identity
+- HBV stats without origin errors
+   
 
 Getting pilot stats as a latex table:
 
@@ -1277,10 +1287,168 @@ Making that table, ehre:
 20160401.hbv.errors.summary	     20160420.wnv.lin2.errors.summary
 20160401.msv.errors.summary
 
+------------------------
+I have the tabl ehere:
+<[(summary-files)]> pwd
+/home/nawrocke/notebook/16_0330_dnaorg_talk/summary-files
+<[(summary-files)]> cat man.all.tbl2annotation
 
 
+                                                                -----------------------------------------------------------------
+                                                                |                |               |                |              |
+                                                                |  Maize streak  |     Dengue    |   West Nile    | Hepatitis B  |
+                                                                |                | (4 serologies |  (2 lineages   |              |
+                                                                |                |     summed    |   summed)      |              |
+                                                                |                |               |                |              |
+                                                                -----------------|--------------------------------|--------------|
+                                                                |                |               |                |              |
+                                                   # accessions |            508 |          3769 |           1097 |         6998 |
+                                                                |                |               |                |              |
+                                                   # CDS/MP     |       3 (CDS)  |       14 (MP) |        16 (MP) |      7 (CDS) |
+                                                                |                |               |                |              |
+                                                   # Exons/MP   |      4 (exons) |       14 (MP) |  16 or 18 (MP) |    7 (exons) |
+                                                                |                |               |                |              |
+                                                                |----------------|---------------|----------------|--------------| 
+                                                                |                |               |                |              |   
+                                  # CDS/MP annotated in GenBank |    1694 (3.34) |  34371 (9.12) |    8004 (7.30) | 34060 (4.87) |   
+                                                                |                |               |                |              |   
+                                # Exons/MP annotated in GenBank |    1772 (3.48) |  34371 (9.12) |    8006 (7.30) | 34080 (4.87) |   
+                                                                |                |               |                |              |   per-accession
+                                                                |----------------|---------------|----------------|--------------|   averages are
+                                                                |                |               |                |              |   in ()
+                                    # Exons/MP annotations that |                |               |                |              |   
+                                   match b/t GenBank & pipeline |    1651 (3.25) |  32195 (8.54) |    7583 (6.91) | 29399 (4.20) |   
+                                                                |                |               |                |              |   
+                                    # Exons/MP annotations that |                |               |                |              |   
+                            do not match b/t GenBank & pipeline |     121 (0.24) |   2176 (0.58) |    423  (0.39) |  4681 (0.67) |   
+                                                                |                |               |                |              |   
+                                                                |                |               |                |              |   
+                                   # new Exons/MP from pipeline |     768 (1.51) |  18395 (4.88) |    9546 (8.70) | 14906 (2.13) |   
+                                                                |                |               |                |              |   
+                                                                ------------------------------------------------------------------ 
 
 
+MSV:
+508 accessions
+1694 (avg: 3.335) cds annotated in GenBank
+1772 (avg: 3.488) exons annotated in GenBank
+1651 (avg: 3.250) exons match between our annotation and GenBank
+121 (avg: 0.238) exons disagree between our annotation and GenBank
+2540 (avg: 5.000) exons annotated by our pipeline (minus any nop errors)
+768 (avg: 1.512) new exon annotations by our pipeline (minus any nop errors)
 
+Dengue:
+3769 accessions
+34371 (avg: 9.119) mp annotated in GenBank
+34371 (avg: 9.119) exons annotated in GenBank
+32195 (avg: 8.542) exons match between our annotation and GenBank
+2176 (avg: 0.577) exons disagree between our annotation and GenBank
+52766 (avg: 14.000) exons annotated by our pipeline (minus any nop errors)
+18395 (avg: 4.881) new exon annotations by our pipeline (minus any nop errors)
 
+WNV: 
+1097 accessions
+8004 (avg: 7.296) mp annotated in GenBank
+8006 (avg: 7.298) exons annotated in GenBank
+7583 (avg: 6.912) exons match between our annotation and GenBank
+423 (avg: 0.386) exons disagree between our annotation and GenBank
+17552 (avg: 16.000) exons annotated by our pipeline (minus any nop errors)
+9546 (avg: 8.702) new exon annotations by our pipeline (minus any nop errors)
 
+HBV:
+6998 accessions
+34060 (avg: 4.867) cds annotated in GenBank
+34080 (avg: 4.870) exons annotated in GenBank
+29399 (avg: 4.201) exons match between our annotation and GenBank
+4681 (avg: 0.669) exons disagree between our annotation and GenBank
+48986 (avg: 7.000) exons annotated by our pipeline (minus any nop errors)
+14906 (avg: 2.130) new exon annotations by our pipeline (minus any nop errors)
+
+I'll copy it to the git repo:
+<[(summary-files)]> cp man.all.tbl2annotation ../talk_dnaorg_20160509/
+<[(summary-files)]> cd ../talk_dnaorg_20160509/
+<[(talk_dnaorg_20160509)]> git add man.all.tbl2annotation 
+<[(talk_dnaorg_20160509)]> git add 00LOG.txt 
+<[(talk_dnaorg_20160509)]> git commit -m "work from NCBI"
+[master 8378bf6] work from NCBI
+ 2 files changed, 87 insertions(+), 1 deletion(-)
+ create mode 100644 man.all.tbl2annotation
+<[(talk_dnaorg_20160509)]> git push
+Username for 'https://github.com': nawrockie
+Password for 'https://nawrockie@github.com': Javier1Bgit
+
+Counting objects: 4, done.
+Delta compression using up to 24 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 1.45 KiB | 0 bytes/s, done.
+Total 4 (delta 1), reused 0 (delta 0)
+To https://github.com/nawrockie/talk_dnaorg_20160509.git
+   a9fb5e9..8378bf6  master -> master
+
+-------------
+I also want the summary of error codes:
+
+I need to sum them for the 4 dengue serologies and for the 2 WNV
+serologies:
+
+I think I'll just do this manually.
+
+----------
+summing for dengue:
+ser1: 1594
+ser2: 1171 accn
+ser3: 856
+ser4: 151
+------------
+3772 total accn
+
+       tot                      accn
+     1   2   3   4  sum     1  2  3  4  sum
+ori  -   -   -   -    -     -  -  -  -    -
+nop  3   2   1   0    6     3  2  1  0   6
+nm3  8   5   2   0   15     4  3  2  0   9
+bd5  0   0   1   2    3     0  0  1  1   2
+bd3  1   0   0   0    1     1  0  0  0   1
+olp 16   5   2  12   35     4  1  1  3   9
+str  2   1   1   1    5     2  1  1  1   5
+stp  1   0   1   0    2     1  0  1  0   2
+ajb  28  20  3  14   65    11  6  2  4  23
+aja  26  21  3  10   60    11  6  2  4  23
+trc  20  6   3   8   37    10  3  2  4  19
+ext   4  0   2   0    6     2  0  1  0   3
+ntr  42  1   7  10   60     5  1  1  1   8
+nst  1   0   0   0    1     1  0  0  0   1
+aji  6   5   1   3   15     6  5  1  3  15
+int  5   1   1   1    8     5  1  1  1   8
+inp  3   2   0   0    5     3  2  0  0   5
+--------------------------------
+tot 166  69 28  61   324            
+any  17   6  6   4    33
+
+---------------------
+Repeating for west nile:
+
+lin1: 1027 accn
+lin2:   71 accn
+
+     1   2   sum   1  2  sum
+ori  -   -   -     -  -  - 
+nop  0   4   4     0  2  2
+nm3  1   2   3     1  2  3
+bd5  0   5   5     0  4  4
+bd3  0   0   0     0  0  0
+olp  18  0   18    9  0  9
+str  3   0   3     1  0  1
+stp  3   0   3     3  0  3
+ajb  4  13   17    3  4  7
+aja  3  13   16    3  4  7
+trc  62 29   91   29 14 43
+ext  6   0    6    3  0  3
+ntr  19  0   19    2  0  2
+nst  0   0    0    0  0  0
+aji  0   4    4    0  4  4
+int  5   0    5    2  0  2
+inp  0   2    2    0  2  2
+--------------------------------
+tot 124  72  196
+any  33  14  47
