@@ -1462,4 +1462,27 @@ todo:
 3. in the over view Rodney --> J. Rodney Brister's
 4. Get rid of dashes in alignment depictions.
 
+--------------------------
+Notes from first run through of talk:
+
+5 min to Outline
+10 min to 'Overview of Annotation'
+13 min to end of Maize streak annotation overview
+18 min to end of error codes: 17 abnormal situations
+20.5 min to end of trc explanation
+43 min to end of talk
+
+General impressions:
+- error code discussion was too long
+
+To do:
+- compare our annotations to ViV existin gannotations for Dengue and
+  WNV
+- add references for MSV and HBV genome pics
+- ?mention Eneida during error code list?
+- olp expected case slide, doesn't really overlap
+- annotation stats table, fix two spacing problems
+- add Eneida's name to her slides
+- hmmer 3 slide, fix text
+
 
