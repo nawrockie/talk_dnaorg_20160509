@@ -1485,4 +1485,79 @@ To do:
 - add Eneida's name to her slides
 - hmmer 3 slide, fix text
 
+================================
+EPN, Fri May  6 10:49:09 2016
+
+Getting stats on our annotations compared with ViV:
+
+Dengue:
+
+Took the dengue_anntotations_diffs.out file from ViV-274:
+<[talk_dnaorg_20160509]> cat ~/Downloads/dengue_annotation_diffs\ \(1\).out   |grep -v SKIPPED
+FILE \\PANFS\pan1\dnaorg\virseqannot\20151216\20151216.dengue.ser1.tbl
+  FJ461303:   NS2B 4108-4500 (file) None-None (DB)
+  FJ461303:    NS3 4501-6357 (file) None-None (DB)
+  KF955440:    NS5 7552-9873 (file) None-None (DB)
+  HQ166035:    NS3 4465-4572 (file) 4464-6320 (DB)
+  KF955446:   NS4A 6341-6720 (file) 6341-6721 (DB)
+FILE \\PANFS\pan1\dnaorg\virseqannot\20151216\20151216.dengue.ser2.tbl
+  JQ922552:   NS4B 6799-7539 (file) 6799-7542 (DB)
+FILE \\PANFS\pan1\dnaorg\virseqannot\20151216\20151216.dengue.ser3.tbl
+  EF629373:      C 5-64 (file) None-None (DB)
+  HM631854:    NS5 7544-10230 (file) 7544-10243 (DB)
+  JQ922557:   NS2A 3435-3500 (file) 3434-4087 (DB)
+FILE \\PANFS\pan1\dnaorg\virseqannot\20151216\20151216.dengue.ser4.tbl
+  AY858050:      C 1-36 (file) None-None (DB)
+  EF457906:      M 440-517 (file) 441-938 (DB)
+  JF262779:      M 440-517 (file) 441-938 (DB)
+  JF262780:      M 440-517 (file) 441-938 (DB)
+
+And I remember that the DB only included 11 of the 14 mature peptides.
+So that's 3772 accessions 
+
+minus 39 
+
+(From my ViV-272 comment on 02/10/16:
+>1. annotation exists in file, but not in DB (378 mature peptides from
+>39 accessions; the format for these is much abbreviated in the second 
+>February 10 version of Sergey's file)
+
+so 3733 accessions * 11 = 41063
+minus 5 (the ones labelled as None-None (DB) above.
+
+So that's 41063-5 = 41058 only 8 of which were different
+
+so 41050/41058 were identical.
+
+Now for West Nile.
+
+There 2012 differences that had to do with a misannotated boundary
+between the 2K and NS4A MPs. Our annotations were correct.
+
+There were exactly 2 other differences:
+  KJ883347:   NS4B 6980-7060 (file) 781-813 (DB)                                                                                                                                                                                             
+  KJ883341:   NS4B 6981-6986 (file) 781-813 (DB)
+
+Now figuring out how many were compared: 
+
+I think it was probably 1006 from Lineage 1 (there were 1027 in our
+list) and not sure how many from lineage 2 I'll assume all but the
+reference were compared, so that's 70, so a total of 1076. 
+
+(I don't know how many for sure because Sergey did not provide a list
+of accessions whihc did not exist in their db as part of his diffs
+file).
+
+So 1076*11=11836 (again only 11 MPs based on the avaiable MPs to downlaod on
+the Virus Variation database)
+
+and there were 2012 differences due to 1 difference and 2 additional
+ones
+
+11836-2014=9822
+
+
+Dengue: 41050/41058 match
+WNV:    9822/11836  match (but 2012 of 2014 differences are due to a single difference in
+two MP boudaries in 1006 accessions)
 
