@@ -1561,3 +1561,41 @@ Dengue: 41050/41058 match
 WNV:    9822/11836  match (but 2012 of 2014 differences are due to a single difference in
 two MP boudaries in 1006 accessions)
 
+-------------------------------
+Notes from second run through:
+
+4.7 min to Outline
+9 minutes to annotation overview
+14 min to beginning of error codes
+17 min to end of error codes (but may trim 1-2 min if I don't go
+   through all error codes)
+19.5 min to outline slide for number 3
+24 min start of Eneida's slides
+?? not sure how long Eneida'slides took (forgot to start watch)
+10 min for implementation to end
+
+
+
+Notes from 1st run through:
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+5 min to Outline
+10 min to 'Overview of Annotation'
+13 min to end of Maize streak annotation overview
+18 min to end of error codes: 17 abnormal situations
+20.5 min to end of trc explanation
+43 min to end of talk
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Notes:
+- don't talk thorugh all error codes, just mention groups of errors
+   on 17 abnormal situations slide
+
+To fix: 
+- viral variation --> virus variation slide 5
+- consider removing 'fracitonal identity and full or partial length
+  from slide 5
+- duplicate first outline talk , blue only on 2nd copy
+- outline --> examples of error codes in number 3 is not really
+  accurate
+- fix olp error example, title should be 1 line
+- fix Rodney --> J Rodney Brister on all outline slides
